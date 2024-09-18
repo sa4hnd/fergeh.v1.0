@@ -10,8 +10,8 @@ import { fileURLToPath } from "url";
  * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation.
  * This is especially useful for Docker builds.
  */
-import "@quenti/env/client/client.mjs";
-import "@quenti/env/server/server.mjs";
+import "@fergeh/env/client/client.mjs";
+import "@fergeh/env/server/server.mjs";
 
 import pjson from "./package.json" assert { type: "json" };
 
@@ -33,7 +33,7 @@ if (process.env.ASSETS_BUCKET_URL)
 
 const getConsoleRewrites = async () => {
   try {
-    return (await import("@quenti/console/next.mjs")).INTERNAL_REWRITES;
+    return (await import("@fergeh/console/next.mjs")).INTERNAL_REWRITES;
   } catch {
     return [];
   }
@@ -44,7 +44,7 @@ let config = {
   generateBuildId: () => nextBuildId({ dir: __dirname }),
   experimental: {
     optimizePackageImports: [
-      "@quenti/components",
+      "@fergeh/components",
       "@tabler/icons-react",
       "@chakra-ui/react",
       "@tremor/react",
@@ -63,23 +63,23 @@ let config = {
     domains,
   },
   transpilePackages: [
-    "@quenti/auth",
-    "@quenti/core",
-    "@quenti/emails",
-    "@quenti/env",
-    "@quenti/interfaces",
-    "@quenti/lib",
-    "@quenti/components",
-    "@quenti/branding",
-    "@quenti/payments",
-    "@quenti/enterprise",
-    "@quenti/prisma",
-    "@quenti/drizzle",
-    "@quenti/trpc",
-    "@quenti/inngest",
-    "@quenti/integrations",
-    "@quenti/types",
-    "@quenti/website",
+    "@fergeh/auth",
+    "@fergeh/core",
+    "@fergeh/emails",
+    "@fergeh/env",
+    "@fergeh/interfaces",
+    "@fergeh/lib",
+    "@fergeh/components",
+    "@fergeh/branding",
+    "@fergeh/payments",
+    "@fergeh/enterprise",
+    "@fergeh/prisma",
+    "@fergeh/drizzle",
+    "@fergeh/trpc",
+    "@fergeh/inngest",
+    "@fergeh/integrations",
+    "@fergeh/types",
+    "@fergeh/website",
   ],
   headers: async () => [
     {

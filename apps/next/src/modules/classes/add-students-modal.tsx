@@ -8,9 +8,9 @@ import {
 } from "react-hook-form";
 import { z } from "zod";
 
-import { Modal } from "@quenti/components/modal";
-import { ToggleGroup } from "@quenti/components/toggle-group";
-import { api } from "@quenti/trpc";
+import { Modal } from "@fergeh/components/modal";
+import { ToggleGroup } from "@fergeh/components/toggle-group";
+import { api } from "@fergeh/trpc";
 
 import {
   Button,

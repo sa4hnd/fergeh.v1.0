@@ -1,5 +1,5 @@
-import { shuffleArray } from "@quenti/lib/array";
-import { Prisma } from "@quenti/prisma/client";
+import { shuffleArray } from "@fergeh/lib/array";
+import { Prisma } from "@fergeh/prisma/client";
 
 import { TRPCError } from "@trpc/server";
 

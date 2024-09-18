@@ -3,9 +3,9 @@ import React from "react";
 import { createStore, useStore } from "zustand";
 import { subscribeWithSelector } from "zustand/middleware";
 
-import type { FacingTerm } from "@quenti/interfaces";
-import { type Rect, areRectanglesOverlapping, pad } from "@quenti/lib/area";
-import { takeNRandom } from "@quenti/lib/array";
+import type { FacingTerm } from "@fergeh/interfaces";
+import { type Rect, areRectanglesOverlapping, pad } from "@fergeh/lib/area";
+import { takeNRandom } from "@fergeh/lib/array";
 
 import {
   MATCH_SHUFFLE_TIME,

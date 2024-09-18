@@ -1,8 +1,8 @@
-import { sendOrganizationDeletionEmail } from "@quenti/emails";
-import { disbandOrgUsers } from "@quenti/enterprise/users";
-import { env } from "@quenti/env/server";
-import { cancelOrganizationSubscription } from "@quenti/payments";
-import { prisma } from "@quenti/prisma";
+import { sendOrganizationDeletionEmail } from "@fergeh/emails";
+import { disbandOrgUsers } from "@fergeh/enterprise/users";
+import { env } from "@fergeh/env/server";
+import { cancelOrganizationSubscription } from "@fergeh/payments";
+import { prisma } from "@fergeh/prisma";
 
 import { inngest } from "../inngest";
 

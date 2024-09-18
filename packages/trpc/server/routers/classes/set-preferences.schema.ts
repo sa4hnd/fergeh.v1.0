@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { BANNER_COLORS } from "@quenti/lib/color";
+import { BANNER_COLORS } from "@fergeh/lib/color";
 
 export const ZSetPreferencesSchema = z.object({
   classId: z.string().cuid(),

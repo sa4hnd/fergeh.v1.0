@@ -1,7 +1,7 @@
 import React from "react";
 
-import { avatarUrl } from "@quenti/lib/avatar";
-import type { StudySetVisibility } from "@quenti/prisma/client";
+import { avatarUrl } from "@fergeh/lib/avatar";
+import type { StudySetVisibility } from "@fergeh/prisma/client";
 
 import {
   Avatar,

@@ -1,5 +1,5 @@
-import { Link, Logo } from "@quenti/components";
-import { HeadSeo } from "@quenti/components/head-seo";
+import { Link, Logo } from "@fergeh/components";
+import { HeadSeo } from "@fergeh/components/head-seo";
 
 import {
   Box,

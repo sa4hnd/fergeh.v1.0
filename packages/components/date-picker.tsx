@@ -2,9 +2,9 @@ import type { Dayjs } from "dayjs";
 import dayjs from "dayjs";
 import React from "react";
 
-import { getAvailableDatesInMonth } from "@quenti/lib/calendar";
-import { daysInMonth, yyyymmdd } from "@quenti/lib/date-fns";
-import { weekdayNames } from "@quenti/lib/weekday";
+import { getAvailableDatesInMonth } from "@fergeh/lib/calendar";
+import { daysInMonth, yyyymmdd } from "@fergeh/lib/date-fns";
+import { weekdayNames } from "@fergeh/lib/weekday";
 
 import {
   Box,

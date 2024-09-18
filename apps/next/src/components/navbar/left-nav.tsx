@@ -2,10 +2,10 @@ import { useSession } from "next-auth/react";
 import NextLink from "next/link";
 import React from "react";
 
-import { Link } from "@quenti/components";
-import { outfit } from "@quenti/lib/chakra-theme";
-import { WEBSITE_URL } from "@quenti/lib/constants/url";
-import { EnabledFeature } from "@quenti/lib/feature";
+import { Link } from "@fergeh/components";
+import { outfit } from "@fergeh/lib/chakra-theme";
+import { WEBSITE_URL } from "@fergeh/lib/constants/url";
+import { EnabledFeature } from "@fergeh/lib/feature";
 
 import {
   Button,
@@ -80,7 +80,7 @@ export const LeftNav: React.FC<LeftNavProps> = ({
             fontWeight={700}
             lineHeight={1.33}
           >
-            Quenti
+            Fergeh
           </Heading>
         </HStack>
       </Flex>

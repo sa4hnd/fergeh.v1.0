@@ -1,5 +1,5 @@
-import { prisma } from "@quenti/prisma";
-import type { UserType } from "@quenti/prisma/client";
+import { prisma } from "@fergeh/prisma";
+import type { UserType } from "@fergeh/prisma/client";
 
 export const bulkJoinOrgUsers = async (
   orgId: string,

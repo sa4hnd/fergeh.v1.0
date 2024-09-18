@@ -1,4 +1,4 @@
-import { orgMembershipMetadata } from "@quenti/prisma/zod-schemas";
+import { orgMembershipMetadata } from "@fergeh/prisma/zod-schemas";
 
 import { useOrganizationMember } from "../../../hooks/use-organization-member";
 

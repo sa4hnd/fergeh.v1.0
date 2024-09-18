@@ -4,8 +4,8 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import React from "react";
 
-import { env } from "@quenti/env/client";
-import type { StudySetVisibility } from "@quenti/prisma/client";
+import { env } from "@fergeh/env/client";
+import type { StudySetVisibility } from "@fergeh/prisma/client";
 
 type SetCreated = {
   id: string;

@@ -1,9 +1,9 @@
 import React from "react";
 
-import { Link } from "@quenti/components";
-import { Modal } from "@quenti/components/modal";
-import { WEBSITE_URL } from "@quenti/lib/constants/url";
-import { api } from "@quenti/trpc";
+import { Link } from "@fergeh/components";
+import { Modal } from "@fergeh/components/modal";
+import { WEBSITE_URL } from "@fergeh/lib/constants/url";
+import { api } from "@fergeh/trpc";
 
 import {
   Button,

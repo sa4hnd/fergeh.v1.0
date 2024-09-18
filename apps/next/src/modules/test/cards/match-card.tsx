@@ -13,10 +13,10 @@ import {
 import { CSS } from "@dnd-kit/utilities";
 import React from "react";
 
-import { GenericLabel } from "@quenti/components";
-import { EvaluatedFalse, EvaluatedTrue } from "@quenti/components/test";
-import type { MatchData } from "@quenti/interfaces";
-import type { StudySetAnswerMode } from "@quenti/prisma/client";
+import { GenericLabel } from "@fergeh/components";
+import { EvaluatedFalse, EvaluatedTrue } from "@fergeh/components/test";
+import type { MatchData } from "@fergeh/interfaces";
+import type { StudySetAnswerMode } from "@fergeh/prisma/client";
 
 import {
   Box,

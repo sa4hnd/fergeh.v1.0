@@ -1,8 +1,8 @@
 import React from "react";
 
-import { Modal } from "@quenti/components";
-import { env } from "@quenti/env/client";
-import { api } from "@quenti/trpc";
+import { Modal } from "@fergeh/components";
+import { env } from "@fergeh/env/client";
+import { api } from "@fergeh/trpc";
 
 import {
   Box,

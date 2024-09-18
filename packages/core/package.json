@@ -1,13 +1,13 @@
 {
-  "name": "@quenti/core",
+  "name": "@fergeh/core",
   "version": "0.0.0",
   "private": true,
   "main": "./index.ts",
   "types": "./index.ts",
   "dependencies": {
-    "@quenti/interfaces": "workspace:*",
-    "@quenti/lib": "workspace:*",
-    "@quenti/prisma": "workspace:*"
+    "@fergeh/interfaces": "workspace:*",
+    "@fergeh/lib": "workspace:*",
+    "@fergeh/prisma": "workspace:*"
   },
   "scripts": {
     "lint": "eslint . --ext .ts,.tsx",

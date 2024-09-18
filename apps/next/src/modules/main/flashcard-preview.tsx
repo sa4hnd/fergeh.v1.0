@@ -1,7 +1,7 @@
 import React from "react";
 
-import { shuffleArray } from "@quenti/lib/array";
-import { api } from "@quenti/trpc";
+import { shuffleArray } from "@fergeh/lib/array";
+import { api } from "@fergeh/trpc";
 
 import { Box, Button, Flex, IconButton, Stack } from "@chakra-ui/react";
 

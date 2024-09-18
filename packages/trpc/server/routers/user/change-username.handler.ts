@@ -1,4 +1,4 @@
-import { failsPrecondition } from "@quenti/lib/usernames";
+import { failsPrecondition } from "@fergeh/lib/usernames";
 
 import { TRPCError } from "@trpc/server";
 

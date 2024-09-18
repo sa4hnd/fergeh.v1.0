@@ -1,4 +1,4 @@
-import { sendMagicLinkEmail } from "@quenti/emails";
+import { sendMagicLinkEmail } from "@fergeh/emails";
 
 export const sendVerificationRequest = async (params: {
   identifier: string;

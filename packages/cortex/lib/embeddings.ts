@@ -1,5 +1,5 @@
-import { env } from "@quenti/env/server";
-import { chunkArray } from "@quenti/lib/array";
+import { env } from "@fergeh/env/server";
+import { chunkArray } from "@fergeh/lib/array";
 
 import { cohere } from "./cohere";
 

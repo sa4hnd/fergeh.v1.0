@@ -1,5 +1,5 @@
-import { env } from "@quenti/env/client";
-import type { EntityType } from "@quenti/prisma/client";
+import { env } from "@fergeh/env/client";
+import type { EntityType } from "@fergeh/prisma/client";
 
 import { truncateOnWord } from "./text";
 

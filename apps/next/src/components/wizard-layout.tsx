@@ -1,6 +1,6 @@
 import React from "react";
 
-import { HeadSeo } from "@quenti/components/head-seo";
+import { HeadSeo } from "@fergeh/components/head-seo";
 
 import {
   Container,

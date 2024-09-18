@@ -2,8 +2,8 @@ import { AnimatePresence, motion, useAnimationControls } from "framer-motion";
 import throttle from "lodash.throttle";
 import React from "react";
 
-import type { StudiableTerm } from "@quenti/interfaces/studiable-term";
-import { api } from "@quenti/trpc";
+import type { StudiableTerm } from "@fergeh/interfaces/studiable-term";
+import { api } from "@fergeh/trpc";
 
 import { Box } from "@chakra-ui/react";
 

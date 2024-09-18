@@ -1,4 +1,4 @@
-import { outfit } from "@quenti/lib/chakra-theme";
+import { outfit } from "@fergeh/lib/chakra-theme";
 
 import {
   Card,

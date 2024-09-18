@@ -1,6 +1,6 @@
-import { IS_PAYMENT_ENABLED } from "@quenti/lib/constants/payments";
-import { APP_URL } from "@quenti/lib/constants/url";
-import { purchaseOrganizationSubscription } from "@quenti/payments";
+import { IS_PAYMENT_ENABLED } from "@fergeh/lib/constants/payments";
+import { APP_URL } from "@fergeh/lib/constants/url";
+import { purchaseOrganizationSubscription } from "@fergeh/payments";
 
 import { TRPCError } from "@trpc/server";
 

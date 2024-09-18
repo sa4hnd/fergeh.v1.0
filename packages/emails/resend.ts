@@ -1,7 +1,7 @@
 import { Resend } from "resend";
 import type { CreateEmailOptions } from "resend/build/src/emails/interfaces";
 
-import { env } from "@quenti/env/server";
+import { env } from "@fergeh/env/server";
 
 import ClasssInviteEmail, {
   type ClassInviteEmailProps,
@@ -23,7 +23,7 @@ import ProfileImportCompleteEmail, {
   type ProfileImportCompleteEmailProps,
 } from "./templates/profile-import-complete";
 
-const NOTIFICATIONS_SENDER = `Quenti <notifications@${env.EMAIL_SENDER || ""}>`;
+const NOTIFICATIONS_SENDER = `Fergeh <notifications@${env.EMAIL_SENDER || ""}>`;
 
 const to = (email: string | string[]) => {
   if (env.USE_RESEND_PREVIEWS) return "delivered@resend.dev";
@@ -49,7 +49,7 @@ export const sendMagicLinkEmail = async (
   await sendEmail({
     from: NOTIFICATIONS_SENDER,
     to: email,
-    subject: `Sign in to Quenti`,
+    subject: `Sign in to Fergeh`,
     react: MagicLinkEmail(opts),
   });
 };
@@ -63,7 +63,7 @@ export const sendClassInviteEmail = async (
     to: email,
     subject: `${opts.inviter.name ?? opts.inviter.email} invited you to teach ${
       opts.className
-    } on Quenti`,
+    } on Fergeh`,
     react: ClasssInviteEmail(opts),
   });
 };
@@ -77,7 +77,7 @@ export const sendOrganizationInviteEmail = async (
     to: email,
     subject: `${opts.inviter.name ?? opts.inviter.email} invited you to join ${
       opts.orgName
-    } on Quenti`,
+    } on Fergeh`,
     react: OrganizationInviteEmail(opts),
   });
 };
@@ -91,7 +91,7 @@ export const sendOrganizationTeacherInviteEmail = async (
     to: email,
     subject: `${opts.inviter.name ?? opts.inviter.email} invited you to join ${
       opts.orgName
-    } on Quenti`,
+    } on Fergeh`,
     react: OrganizationTeacherInviteEmail(opts),
   });
 };
@@ -127,7 +127,7 @@ export const sendProfileImportCompleteEmail = async (
   await sendEmail({
     from: NOTIFICATIONS_SENDER,
     to: email,
-    subject: `Your Quenti profile is ready!`,
+    subject: `Your Fergeh profile is ready!`,
     react: ProfileImportCompleteEmail(opts),
   });
 };

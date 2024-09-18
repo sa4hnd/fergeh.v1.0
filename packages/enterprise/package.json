@@ -1,12 +1,12 @@
 {
-  "name": "@quenti/enterprise",
+  "name": "@fergeh/enterprise",
   "version": "0.0.0",
   "private": true,
   "dependencies": {
     "@clickhouse/client": "^0.2.2",
-    "@quenti/core": "workspace:*",
-    "@quenti/env": "workspace:*",
-    "@quenti/prisma": "workspace:*",
+    "@fergeh/core": "workspace:*",
+    "@fergeh/env": "workspace:*",
+    "@fergeh/prisma": "workspace:*",
     "@upstash/redis": "^1.22.1"
   },
   "scripts": {

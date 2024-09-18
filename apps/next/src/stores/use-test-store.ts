@@ -2,14 +2,14 @@ import React from "react";
 import { createStore, useStore } from "zustand";
 import { subscribeWithSelector } from "zustand/middleware";
 
-import type { Language } from "@quenti/core";
-import { EvaluationResult, evaluate } from "@quenti/core/evaluator";
+import type { Language } from "@fergeh/core";
+import { EvaluationResult, evaluate } from "@fergeh/core/evaluator";
 import {
   generateMatchQuestion,
   generateMcqQuestion,
   generateTrueFalseQuestion,
   generateWriteQuestion,
-} from "@quenti/core/generator";
+} from "@fergeh/core/generator";
 import {
   type CortexGraderResponse,
   type DefaultData,
@@ -20,17 +20,17 @@ import {
   TestQuestionType,
   type TrueFalseData,
   type WriteData,
-} from "@quenti/interfaces";
-import { getRandom, shuffleArray, takeNRandom } from "@quenti/lib/array";
-import { SPECIAL_CHAR_REGEXP } from "@quenti/lib/constants/characters";
+} from "@fergeh/interfaces";
+import { getRandom, shuffleArray, takeNRandom } from "@fergeh/lib/array";
+import { SPECIAL_CHAR_REGEXP } from "@fergeh/lib/constants/characters";
 import {
   CORRECT,
   CORRECT_IS_SIMILAR,
   INCORRECT,
   TRUE_FALSE_INCORRECT_IS_FALSE,
   TRUE_FALSE_INCORRECT_IS_TRUE,
-} from "@quenti/lib/constants/remarks";
-import type { StudySetAnswerMode } from "@quenti/prisma/client";
+} from "@fergeh/lib/constants/remarks";
+import type { StudySetAnswerMode } from "@fergeh/prisma/client";
 
 import { word } from "../utils/terms";
 

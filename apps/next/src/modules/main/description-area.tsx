@@ -1,5 +1,5 @@
-import { Link } from "@quenti/components";
-import { avatarUrl } from "@quenti/lib/avatar";
+import { Link } from "@fergeh/components";
+import { avatarUrl } from "@fergeh/lib/avatar";
 
 import {
   Avatar,

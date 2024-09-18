@@ -2,13 +2,13 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import React from "react";
 
-import { env } from "@quenti/env/client";
-import { avatarUrl } from "@quenti/lib/avatar";
-import { outfit } from "@quenti/lib/chakra-theme";
-import { APP_URL } from "@quenti/lib/constants/url";
-import { useShortcut } from "@quenti/lib/hooks/use-shortcut";
-import type { StudySetType, User } from "@quenti/prisma/client";
-import { api } from "@quenti/trpc";
+import { env } from "@fergeh/env/client";
+import { avatarUrl } from "@fergeh/lib/avatar";
+import { outfit } from "@fergeh/lib/chakra-theme";
+import { APP_URL } from "@fergeh/lib/constants/url";
+import { useShortcut } from "@fergeh/lib/hooks/use-shortcut";
+import type { StudySetType, User } from "@fergeh/prisma/client";
+import { api } from "@fergeh/trpc";
 
 import {
   Avatar,

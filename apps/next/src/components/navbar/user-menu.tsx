@@ -2,7 +2,7 @@ import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import React from "react";
 
-import { avatarUrl } from "@quenti/lib/avatar";
+import { avatarUrl } from "@fergeh/lib/avatar";
 
 import {
   Avatar,

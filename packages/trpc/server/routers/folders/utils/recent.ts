@@ -1,4 +1,4 @@
-import type { PrismaClient } from "@quenti/prisma/client";
+import type { PrismaClient } from "@fergeh/prisma/client";
 
 export const getRecentFolders = async (
   prisma: PrismaClient,

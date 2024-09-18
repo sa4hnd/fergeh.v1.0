@@ -9,8 +9,8 @@ import {
 import { motion } from "framer-motion";
 import React from "react";
 
-import { languageName } from "@quenti/core/language";
-import { editorInput, getPlainText, hasRichText } from "@quenti/lib/editor";
+import { languageName } from "@fergeh/core/language";
+import { editorInput, getPlainText, hasRichText } from "@fergeh/lib/editor";
 
 import {
   Box,

@@ -1,4 +1,4 @@
-import type { EntailmentResult } from "@quenti/interfaces";
+import type { EntailmentResult } from "@fergeh/interfaces";
 
 import { Hf } from "../lib/huggingface";
 

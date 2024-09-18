@@ -1,5 +1,5 @@
-import { sendOrganizationTeacherInviteEmail } from "@quenti/emails";
-import { env } from "@quenti/env/client";
+import { sendOrganizationTeacherInviteEmail } from "@fergeh/emails";
+import { env } from "@fergeh/env/client";
 
 import { inngest } from "../inngest";
 

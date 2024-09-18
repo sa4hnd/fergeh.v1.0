@@ -1,6 +1,6 @@
 import type React from "react";
 
-import { useShortcut } from "@quenti/lib/hooks/use-shortcut";
+import { useShortcut } from "@fergeh/lib/hooks/use-shortcut";
 
 export interface ChoiceShortcutLayerProps {
   choose: (index: number) => void;

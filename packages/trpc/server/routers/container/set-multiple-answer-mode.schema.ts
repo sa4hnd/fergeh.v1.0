@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { MultipleAnswerMode } from "@quenti/prisma/client";
+import { MultipleAnswerMode } from "@fergeh/prisma/client";
 
 export const ZSetMultipleAnswerModeSchema = z.object({
   entityId: z.string(),

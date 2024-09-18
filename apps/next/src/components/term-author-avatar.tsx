@@ -1,4 +1,4 @@
-import type { FacingTerm } from "@quenti/interfaces";
+import type { FacingTerm } from "@fergeh/interfaces";
 
 import { Avatar, Popover, PopoverTrigger } from "@chakra-ui/react";
 

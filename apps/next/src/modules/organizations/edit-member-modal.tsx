@@ -1,8 +1,8 @@
 import React from "react";
 
-import { Modal } from "@quenti/components/modal";
-import type { MembershipRole } from "@quenti/prisma/client";
-import { api } from "@quenti/trpc";
+import { Modal } from "@fergeh/components/modal";
+import type { MembershipRole } from "@fergeh/prisma/client";
+import { api } from "@fergeh/trpc";
 
 import { Button, ButtonGroup, FormControl, FormLabel } from "@chakra-ui/react";
 

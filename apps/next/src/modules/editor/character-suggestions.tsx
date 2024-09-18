@@ -5,7 +5,7 @@ import {
   type Language,
   getSuggestions,
   languageName,
-} from "@quenti/core/language";
+} from "@fergeh/core/language";
 
 import {
   Box,

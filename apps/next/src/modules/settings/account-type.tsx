@@ -1,9 +1,9 @@
 import { useSession } from "next-auth/react";
 import React from "react";
 
-import { ToggleGroup } from "@quenti/components/toggle-group";
-import type { UserType } from "@quenti/prisma/client";
-import { api } from "@quenti/trpc";
+import { ToggleGroup } from "@fergeh/components/toggle-group";
+import type { UserType } from "@fergeh/prisma/client";
+import { api } from "@fergeh/trpc";
 
 import { HStack, Text, useColorModeValue } from "@chakra-ui/react";
 

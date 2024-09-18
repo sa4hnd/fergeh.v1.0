@@ -1,4 +1,4 @@
-import { BANNER_COLORS } from "@quenti/lib/color";
+import { BANNER_COLORS } from "@fergeh/lib/color";
 
 import {
   Box,

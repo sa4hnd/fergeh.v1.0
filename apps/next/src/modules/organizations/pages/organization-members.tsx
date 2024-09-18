@@ -2,8 +2,8 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import React from "react";
 
-import type { MembershipRole } from "@quenti/prisma/client";
-import { api } from "@quenti/trpc";
+import type { MembershipRole } from "@fergeh/prisma/client";
+import { api } from "@fergeh/trpc";
 
 import {
   Box,

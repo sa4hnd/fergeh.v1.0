@@ -4,9 +4,9 @@ import { log } from "next-axiom";
 import { useRouter } from "next/router";
 import React from "react";
 
-import { HeadSeo } from "@quenti/components/head-seo";
-import { api } from "@quenti/trpc";
-import { MATCH_MIN_TIME } from "@quenti/trpc/server/common/constants";
+import { HeadSeo } from "@fergeh/components/head-seo";
+import { api } from "@fergeh/trpc";
+import { MATCH_MIN_TIME } from "@fergeh/trpc/server/common/constants";
 
 import { Box } from "@chakra-ui/react";
 

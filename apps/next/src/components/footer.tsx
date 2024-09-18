@@ -1,5 +1,5 @@
 import { FrameLogo, Link } from "@quenti/components";
-import { FaInstagram, FaWhatsapp } from "react-icons/fa"; // Import Instagram and WhatsApp icons
+import { GithubIcon, XIcon, InstagramIcon, WhatsappIcon } from "@quenti/components/icons";
 import { SUPPORT_EMAIL } from "@quenti/lib/constants/email";
 import { WEBSITE_URL } from "@quenti/lib/constants/url";
 
@@ -127,13 +127,17 @@ export const Footer = () => {
             </Box>
             <FooterLink href={WEBSITE_URL} text="Home" />
             <FooterLink href={`${WEBSITE_URL}/pricing`} text="Pricing" />
+        
             <FooterLink href="https://status.quenti.io" text="Status" />
+          
             <FooterLink
               href={`mailto:${SUPPORT_EMAIL}`}
               text="Contact support"
             />
             <FooterLink href={`${WEBSITE_URL}/privacy`} text="Privacy Policy" />
             <FooterLink href={`${WEBSITE_URL}/terms`} text="Terms of Service" />
+        
+          
           </HStack>
           <Flex
             display={{ base: "inherit", lg: "none" }}
@@ -151,13 +155,11 @@ export const Footer = () => {
 const SocialLinksContainer = () => {
   return (
     <HStack spacing="3">
-      {/* WhatsApp Link */}
-      <SocialLink href="https://wa.me/9647507098669">
-        <FaWhatsapp w="4" h="4" />
+      <SocialLink href="https://instagram.com/sahindhamzani">
+        <InstagramIcon w="4" h="4" />
       </SocialLink>
-      {/* Instagram Link */}
-      <SocialLink href="https://www.instagram.com/sahindhamzani">
-        <FaInstagram w="4" h="4" />
+      <SocialLink href="https://wa.me/9647507098669">
+        <WhatsappIcon w="4" h="4" />
       </SocialLink>
     </HStack>
   );

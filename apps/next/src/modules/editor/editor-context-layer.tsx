@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
 import React from "react";
 
-import { richTextToHtml } from "@quenti/lib/editor";
-import { type RouterOutputs, api } from "@quenti/trpc";
+import { richTextToHtml } from "@fergeh/lib/editor";
+import { type RouterOutputs, api } from "@fergeh/trpc";
 
 import { type Context, editorEventChannel } from "../../events/editor";
 import {

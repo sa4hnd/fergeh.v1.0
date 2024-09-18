@@ -1,4 +1,4 @@
-import { api } from "@quenti/trpc";
+import { api } from "@fergeh/trpc";
 
 import { Button, Flex } from "@chakra-ui/react";
 

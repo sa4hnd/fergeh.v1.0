@@ -1,5 +1,5 @@
-import { Link } from "@quenti/components/link";
-import type { AssignmentType } from "@quenti/prisma/client";
+import { Link } from "@fergeh/components/link";
+import type { AssignmentType } from "@fergeh/prisma/client";
 
 import {
   Box,

@@ -1,10 +1,10 @@
 import React from "react";
 
-import { GenericLabel } from "@quenti/components";
-import { ScriptFormatter } from "@quenti/components/script-formatter";
-import { Clickable } from "@quenti/components/test";
-import { RichPromptDisplay } from "@quenti/components/test/rich-prompt-display";
-import type { MultipleChoiceData } from "@quenti/interfaces";
+import { GenericLabel } from "@fergeh/components";
+import { ScriptFormatter } from "@fergeh/components/script-formatter";
+import { Clickable } from "@fergeh/components/test";
+import { RichPromptDisplay } from "@fergeh/components/test/rich-prompt-display";
+import type { MultipleChoiceData } from "@fergeh/interfaces";
 
 import {
   Box,

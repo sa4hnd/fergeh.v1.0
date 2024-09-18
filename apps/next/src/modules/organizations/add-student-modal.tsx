@@ -3,8 +3,8 @@ import React from "react";
 import { Controller, type SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { Modal } from "@quenti/components/modal";
-import { api } from "@quenti/trpc";
+import { Modal } from "@fergeh/components/modal";
+import { api } from "@fergeh/trpc";
 
 import {
   Button,

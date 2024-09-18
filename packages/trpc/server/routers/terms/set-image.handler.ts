@@ -1,4 +1,4 @@
-import { triggerDownload } from "@quenti/images/server/unsplash";
+import { triggerDownload } from "@fergeh/images/server/unsplash";
 
 import { TRPCError } from "@trpc/server";
 

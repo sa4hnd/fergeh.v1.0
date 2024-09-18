@@ -1,5 +1,5 @@
-import { env } from "@quenti/env/server";
-import { deleteStudySetAssets } from "@quenti/images/server";
+import { env } from "@fergeh/env/server";
+import { deleteStudySetAssets } from "@fergeh/images/server";
 
 import { TRPCError } from "@trpc/server";
 

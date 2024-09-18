@@ -21,7 +21,7 @@ import type { AxiomAPIRequest } from "next-axiom";
 import type { Counter } from "prom-client";
 import superjson from "superjson";
 
-import { getServerAuthSession } from "@quenti/auth";
+import { getServerAuthSession } from "@fergeh/auth";
 
 /**
  * 2. INITIALIZATION
@@ -29,9 +29,9 @@ import { getServerAuthSession } from "@quenti/auth";
  * This is where the trpc api is initialized, connecting the context and
  * transformer
  */
-import { env } from "@quenti/env/server";
-import type { EnabledFeature } from "@quenti/lib/feature";
-import { prisma } from "@quenti/prisma";
+import { env } from "@fergeh/env/server";
+import type { EnabledFeature } from "@fergeh/lib/feature";
+import { prisma } from "@fergeh/prisma";
 
 import { TRPCError, initTRPC } from "@trpc/server";
 import type { CreateNextContextOptions } from "@trpc/server/adapters/next";

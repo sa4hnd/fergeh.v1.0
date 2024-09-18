@@ -1,6 +1,6 @@
-import { env } from "@quenti/env/server";
-import { deleteTermAssets } from "@quenti/images/server";
-import { Prisma } from "@quenti/prisma/client";
+import { env } from "@fergeh/env/server";
+import { deleteTermAssets } from "@fergeh/images/server";
+import { Prisma } from "@fergeh/prisma/client";
 
 import { TRPCError } from "@trpc/server";
 

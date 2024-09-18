@@ -1,5 +1,5 @@
-import { inngest } from "@quenti/inngest";
-import { cancelOrganizationSubscription } from "@quenti/payments";
+import { inngest } from "@fergeh/inngest";
+import { cancelOrganizationSubscription } from "@fergeh/payments";
 
 import { TRPCError } from "@trpc/server";
 

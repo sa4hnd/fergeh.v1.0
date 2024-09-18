@@ -2,14 +2,14 @@ import type { GetServerSidePropsContext } from "next";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 
-import { HeadSeo } from "@quenti/components/head-seo";
-import { count, db, eq } from "@quenti/drizzle";
+import { HeadSeo } from "@fergeh/components/head-seo";
+import { count, db, eq } from "@fergeh/drizzle";
 import {
   classJoinCode as classJoinCodeTable,
   foldersOnClasses,
   studySetsOnClasses,
-} from "@quenti/drizzle/schema";
-import { api } from "@quenti/trpc";
+} from "@fergeh/drizzle/schema";
+import { api } from "@fergeh/trpc";
 
 import {
   Box,

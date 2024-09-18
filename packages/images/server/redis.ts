@@ -1,6 +1,6 @@
 import { Redis } from "@upstash/redis";
 
-import { env } from "@quenti/env/server";
+import { env } from "@fergeh/env/server";
 
 const redis = (() => {
   try {

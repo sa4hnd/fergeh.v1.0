@@ -1,7 +1,7 @@
-import { env } from "@quenti/env/client";
-import { dataUrlToBuffer } from "@quenti/images/react/utils";
-import { useFileReader } from "@quenti/lib/hooks";
-import { api } from "@quenti/trpc";
+import { env } from "@fergeh/env/client";
+import { dataUrlToBuffer } from "@fergeh/images/react/utils";
+import { useFileReader } from "@fergeh/lib/hooks";
+import { api } from "@fergeh/trpc";
 
 import { useToast } from "@chakra-ui/react";
 

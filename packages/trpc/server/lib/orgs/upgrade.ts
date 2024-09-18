@@ -2,9 +2,9 @@ import {
   bulkJoinOrgMembersAsTeachers,
   bulkJoinOrgUsers,
   bulkJoinOrgUsersByFilter,
-} from "@quenti/enterprise/users";
-import { prisma } from "@quenti/prisma";
-import { orgMetadataSchema } from "@quenti/prisma/zod-schemas";
+} from "@fergeh/enterprise/users";
+import { prisma } from "@fergeh/prisma";
+import { orgMetadataSchema } from "@fergeh/prisma/zod-schemas";
 
 import { bulkJoinOrgClasses } from "./classes";
 import { conflictingDomains } from "./domains";

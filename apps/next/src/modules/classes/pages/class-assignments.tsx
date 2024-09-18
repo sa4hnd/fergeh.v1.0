@@ -1,9 +1,9 @@
 import { useRouter } from "next/router";
 import React from "react";
 
-import { Link } from "@quenti/components";
-import { useDebounce } from "@quenti/lib/hooks/use-debounce";
-import { api } from "@quenti/trpc";
+import { Link } from "@fergeh/components";
+import { useDebounce } from "@fergeh/lib/hooks/use-debounce";
+import { api } from "@fergeh/trpc";
 
 import {
   Box,
