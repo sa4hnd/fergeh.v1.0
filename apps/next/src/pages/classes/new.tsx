@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useState } from "react"; // Import useState
 import { Controller, type SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -54,6 +54,12 @@ export default function NewClass() {
   const { data: session } = useSession();
   const earlyClassAccess = useFeature(EnabledFeature.EarlyClassAccess);
 
+  // State variables for username and password
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [isAuthenticated, setIsAuthenticated] = useState(false); // State to track authentication
+
   useStudentRedirect("/home");
 
   const sendEvent = (id: string, name: string) => {
@@ -89,15 +95,51 @@ export default function NewClass() {
     await create.mutateAsync(data);
   };
 
-  React.useEffect(() => {
-    if (!session?.user || session.user.organizationId || earlyClassAccess)
-      return;
-    void router.push("/home");
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [session?.user]);
+  // Function to handle form submission for username and password
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Correct credentials
+    const correctUsername = "sahindhamzani";
+    const correctPassword = "hemzany1";
 
-  if (!session?.user || (!session.user.organizationId && !earlyClassAccess))
-    return <Loading />;
+    // Check if the credentials are correct
+    if (username === correctUsername && password === correctPassword) {
+      setError("");
+      setIsAuthenticated(true); // User is authenticated
+    } else {
+      setError("Incorrect username or password");
+    }
+  };
+
+  if (!isAuthenticated) {
+    return (
+      <Box>
+        <form onSubmit={handleSubmit}>
+          <FormControl isInvalid={!!error}>
+            <FormLabel>Username</FormLabel>
+            <Input
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder="Enter username"
+              required
+            />
+          </FormControl>
+          <FormControl isInvalid={!!error}>
+            <FormLabel>Password</FormLabel>
+            <Input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Enter password"
+              required
+            />
+          </FormControl>
+          <FormErrorMessage>{error}</FormErrorMessage>
+          <Button type="submit">Submit</Button>
+        </form>
+      </Box>
+    );
+  }
 
   return (
     <WizardLayout

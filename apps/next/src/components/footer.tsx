@@ -1,5 +1,5 @@
 import { FrameLogo, Link } from "@quenti/components";
-import { GithubIcon, XIcon } from "@quenti/components/icons";
+import { FaInstagram, FaWhatsapp } from "react-icons/fa"; // Import Instagram and WhatsApp icons
 import { SUPPORT_EMAIL } from "@quenti/lib/constants/email";
 import { WEBSITE_URL } from "@quenti/lib/constants/url";
 
@@ -52,7 +52,7 @@ export const Footer = () => {
                 <HStack>
                   <FrameLogo width="18px" height="18px" />
                   <Heading size="md" className="notranslate">
-                    Quenti
+                    Fergeh
                   </Heading>
                 </HStack>
               </Link>
@@ -127,25 +127,13 @@ export const Footer = () => {
             </Box>
             <FooterLink href={WEBSITE_URL} text="Home" />
             <FooterLink href={`${WEBSITE_URL}/pricing`} text="Pricing" />
-            <FooterLink
-              href="https://github.com/quenti-io/quenti"
-              text="Open source"
-            />
             <FooterLink href="https://status.quenti.io" text="Status" />
-            <FooterLink
-              href={`${WEBSITE_URL}/organizations`}
-              text="Organizations"
-            />
             <FooterLink
               href={`mailto:${SUPPORT_EMAIL}`}
               text="Contact support"
             />
             <FooterLink href={`${WEBSITE_URL}/privacy`} text="Privacy Policy" />
             <FooterLink href={`${WEBSITE_URL}/terms`} text="Terms of Service" />
-            <FooterLink
-              href="https://github.com/quenti-io/quenti/blob/main/LICENSE"
-              text="License"
-            />
           </HStack>
           <Flex
             display={{ base: "inherit", lg: "none" }}
@@ -163,11 +151,13 @@ export const Footer = () => {
 const SocialLinksContainer = () => {
   return (
     <HStack spacing="3">
-      <SocialLink href="https://github.com/quenti-io">
-        <GithubIcon w="4" h="4" />
+      {/* WhatsApp Link */}
+      <SocialLink href="https://wa.me/9647507098669">
+        <FaWhatsapp w="4" h="4" />
       </SocialLink>
-      <SocialLink href="https://twitter.com/quentiapp">
-        <XIcon w="4" h="4" />
+      {/* Instagram Link */}
+      <SocialLink href="https://www.instagram.com/sahindhamzani">
+        <FaInstagram w="4" h="4" />
       </SocialLink>
     </HStack>
   );
