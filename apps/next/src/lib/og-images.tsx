@@ -65,7 +65,7 @@ export const EntityImage: React.FC<EntityImageProps> = ({
           >
             <div
               tw="text-gray-500 text-xl font-bold"
-              style={{ fontFamily: "Open Sans" }}
+              style={{ fontFamily: "" }}
             >
               {type == "Folder"
                 ? "Folder"
