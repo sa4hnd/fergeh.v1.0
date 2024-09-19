@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Controller, type SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -42,9 +42,9 @@ const schema = z.object({
     .max(50, { message: "Name must be less than 50 characters" }),
 });
 
-type NewOrganizationFormInput = {
+interface NewOrganizationFormInput {
   name: string;
-};
+}
 
 export default function NewOrganization() {
   const utils = api.useUtils();
@@ -52,13 +52,6 @@ export default function NewOrganization() {
   const { data: session, status, update } = useSession();
   const { event } = useTelemetry();
   const { data: me } = useMe();
-
-  const HARD_CODED_USERNAME = "sahindhamzani";
-  const HARD_CODED_PASSWORD = "hemzany1";
-
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  onst [ setIsAuthenticated] = useState(false); // Added state for authentication
 
   useUnauthedRedirect();
 
@@ -87,12 +80,13 @@ export default function NewOrganization() {
         sendEvent(data.id, data.name);
         await router.push(`/orgs/${data.id}/members-onboarding`);
         await invalidateUser();
+
         return;
       }
       await uploadLogo.mutateAsync({ orgId: data.id });
     },
     onError: (error) => {
-      if (error.message === "name_profane") {
+      if (error.message == "name_profane") {
         newOrganizationFormMethods.setError("name", {
           type: "custom",
           message: "Profane organization names are not allowed",
@@ -113,25 +107,19 @@ export default function NewOrganization() {
   } = newOrganizationFormMethods;
 
   const onSubmit: SubmitHandler<NewOrganizationFormInput> = async (data) => {
-    if (username === HARD_CODED_USERNAME && password === HARD_CODED_PASSWORD) {
-      setIsAuthenticated(true);
-      
-      if (session?.user?.type === "Student") {
-        await setUserType.mutateAsync({ type: "Teacher" });
-      }
-      await create.mutateAsync(data);
-    } else {
-      alert("Invalid username or password");
+    if (session?.user?.type == "Student") {
+      await setUserType.mutateAsync({ type: "Teacher" });
     }
+    await create.mutateAsync(data);
   };
 
-  useEffect(() => {
-    if (me?.orgMembership) {
-      void router.push(`/orgs/${me.orgMembership.organization.id}`);
-    }
-  }, [me?.orgMembership, router]);
+  React.useEffect(() => {
+    if (!me?.orgMembership) return;
+    void router.push(`/orgs/${me.orgMembership.organization.id}`);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [me?.orgMembership]);
 
-  if (status !== "authenticated" || !me || me.orgMembership) return <Loading />;
+  if (status != "authenticated" || !me || me.orgMembership) return <Loading />;
   if (session?.user?.organizationId)
     return (
       <ReauthMessage
@@ -227,27 +215,6 @@ export default function NewOrganization() {
                   </FormControl>
                 )}
               />
-              <FormControl>
-                <FormLabel fontSize="sm" mb="10px">
-                  Username
-                </FormLabel>
-                <Input
-                  placeholder="Enter username"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                />
-              </FormControl>
-              <FormControl>
-                <FormLabel fontSize="sm" mb="10px">
-                  Password
-                </FormLabel>
-                <Input
-                  type="password"
-                  placeholder="Enter password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </FormControl>
             </Stack>
             <ButtonGroup w="full">
               <Button
