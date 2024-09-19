@@ -1,5 +1,5 @@
 import { FrameLogo, Link } from "@fergeh/components";
-import { GithubIcon, XIcon } from "@fergeh/components/icons";
+import { GithubIcon, XIcon, InstagramIcon, WhatsappIcon } from "@fergeh/components/icons";
 import { SUPPORT_EMAIL } from "@fergeh/lib/constants/email";
 import { WEBSITE_URL } from "@fergeh/lib/constants/url";
 
@@ -127,25 +127,17 @@ export const Footer = () => {
             </Box>
             <FooterLink href={WEBSITE_URL} text="Home" />
             <FooterLink href={`${WEBSITE_URL}/pricing`} text="Pricing" />
-            <FooterLink
-              href="https://github.com/quenti-io/quenti"
-              text="Open source"
-            />
+        
             <FooterLink href="https://status.quenti.io" text="Status" />
-            <FooterLink
-              href={`${WEBSITE_URL}/organizations`}
-              text="Organizations"
-            />
+          
             <FooterLink
               href={`mailto:${SUPPORT_EMAIL}`}
               text="Contact support"
             />
             <FooterLink href={`${WEBSITE_URL}/privacy`} text="Privacy Policy" />
             <FooterLink href={`${WEBSITE_URL}/terms`} text="Terms of Service" />
-            <FooterLink
-              href="https://github.com/quenti-io/quenti/blob/main/LICENSE"
-              text="License"
-            />
+        
+          
           </HStack>
           <Flex
             display={{ base: "inherit", lg: "none" }}
@@ -163,11 +155,11 @@ export const Footer = () => {
 const SocialLinksContainer = () => {
   return (
     <HStack spacing="3">
-      <SocialLink href="https://github.com/quenti-io">
-        <GithubIcon w="4" h="4" />
+      <SocialLink href="https://instagram.com/sahindhamzani">
+        <InstagramIcon w="4" h="4" />
       </SocialLink>
-      <SocialLink href="https://twitter.com/quentiapp">
-        <XIcon w="4" h="4" />
+      <SocialLink href="https://wa.me/9647507098669">
+        <WhatsappIcon w="4" h="4" />
       </SocialLink>
     </HStack>
   );
