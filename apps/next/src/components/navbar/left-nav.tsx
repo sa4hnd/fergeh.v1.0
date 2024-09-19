@@ -50,7 +50,6 @@ export const LeftNav: React.FC<LeftNavProps> = ({
 
   const [menuOpen, setMenuOpen] = React.useState(false);
 
-
   const menuBg = useColorModeValue("white", "gray.800");
 
   return (

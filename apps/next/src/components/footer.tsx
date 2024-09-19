@@ -1,5 +1,10 @@
-import { FrameLogo, Link } from "@fergeh/components"; 
-import { GithubIcon, XIcon, InstagramIcon, WhatsappIcon } from "@fergeh/components/icons";
+import { FrameLogo, Link } from "@fergeh/components";
+import {
+  GithubIcon,
+  InstagramIcon,
+  WhatsappIcon,
+  XIcon,
+} from "@fergeh/components/icons";
 import { SUPPORT_EMAIL } from "@fergeh/lib/constants/email";
 import { WEBSITE_URL } from "@fergeh/lib/constants/url";
 
@@ -127,17 +132,15 @@ export const Footer = () => {
             </Box>
             <FooterLink href={WEBSITE_URL} text="Home" />
             <FooterLink href={`${WEBSITE_URL}/pricing`} text="Pricing" />
-        
+
             <FooterLink href="https://status.quenti.io" text="Status" />
-          
+
             <FooterLink
               href={`mailto:${SUPPORT_EMAIL}`}
               text="Contact support"
             />
             <FooterLink href={`${WEBSITE_URL}/privacy`} text="Privacy Policy" />
             <FooterLink href={`${WEBSITE_URL}/terms`} text="Terms of Service" />
-        
-          
           </HStack>
           <Flex
             display={{ base: "inherit", lg: "none" }}
