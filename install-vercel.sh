@@ -1,3 +1,4 @@
+#!/bin/bash
 
 if [ "$GITHUB_ACCESS_TOKEN" == "" ]; then
   echo "GITHUB_ACCESS_TOKEN is not set"
@@ -11,7 +12,7 @@ install () {
   SUBMODULE_PATH=$2
 
   # Get submodule commit
-  output=`git submodule status --recursive $SUBMODULE_PATH`
+  output=$(git submodule status --recursive $SUBMODULE_PATH)
   no_prefix=${output#*-}
   COMMIT=${no_prefix% *}
 
@@ -38,3 +39,11 @@ install () {
 install "github.com/user-pass/website" "apps/website"
 install "github.com/user-pass/integrations" "packages/integrations"
 install "github.com/user-pass/console" "packages/console"
+
+# Use Bun for installing dependencies
+echo "Installing dependencies with Bun..."
+bun install
+
+# Build the project with Bun
+echo "Building the project with Bun..."
+bun run build
