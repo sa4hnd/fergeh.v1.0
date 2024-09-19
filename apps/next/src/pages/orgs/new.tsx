@@ -58,7 +58,6 @@ export default function NewOrganization() {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useUnauthedRedirect();
 
