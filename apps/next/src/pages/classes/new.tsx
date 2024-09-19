@@ -1,12 +1,9 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 // Import useState
 import { Controller, type SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
-
-import { EnabledFeature } from "@fergeh/lib/feature";
 import { api } from "@fergeh/trpc";
 
 import {
@@ -28,7 +25,6 @@ import { IconArrowRight, IconUpload } from "@tabler/icons-react";
 import { PageWrapper } from "../../common/page-wrapper";
 import { AutoResizeTextarea } from "../../components/auto-resize-textarea";
 import { WizardLayout } from "../../components/wizard-layout";
-import { useFeature } from "../../hooks/use-feature";
 import { useStudentRedirect } from "../../hooks/use-student-redirect";
 import { getLayout } from "../../layouts/main-layout";
 import { useTelemetry } from "../../lib/telemetry";
@@ -51,7 +47,6 @@ const schema = z.object({
 export default function NewClass() {
   const router = useRouter();
   const { event } = useTelemetry();
-  const earlyClassAccess = useFeature(EnabledFeature.EarlyClassAccess);
 
   // State variables for username and password
   const [username, setUsername] = useState("");
