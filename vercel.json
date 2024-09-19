@@ -20,7 +20,7 @@
     "GOOGLE_CLIENT_ID": "654431951320-e2m1elk4s3p8r9f367cericef08k4s4a.apps.googleusercontent.com",
     "GOOGLE_CLIENT_SECRET": "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",
     "RESEND_API_KEY": "re_fchZMutN_63taQy4Xzury2Pv5W15jntYZ",
-    "EMAIL_SENDER": "fergeh.notifications.com",
+    "EMAIL_SENDER": "fergeh.notifications.com", 
     "USE_RESEND_PREVIEWS": "true",
     "BYPASS_ORG_DOMAIN_BLACKLIST": "true",
     "METRICS_API_USER": "localhost",
