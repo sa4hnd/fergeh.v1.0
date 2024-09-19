@@ -1,4 +1,5 @@
 import { Link } from "@fergeh/components";
+
 import {
   Button,
   Card,
@@ -8,7 +9,8 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { FaInstagram } from "react-icons/fa"; // Import Instagram icon
+
+import { IconBrandX } from "@tabler/icons-react";
 
 import { DefaultLayout } from "./default-layout";
 import { PresentWrapper } from "./present-wrapper";
@@ -41,18 +43,18 @@ export const OnboardingSubscribe = () => {
             }}
           >
             <Stack spacing="0">
-              <Heading fontSize="md">Follow us on Instagram</Heading>
+              <Heading fontSize="md">Follow us on X</Heading>
               <Text fontSize="sm" color={muted}>
                 Features, tips, tricks, etc.
               </Text>
             </Stack>
             <Button
               as={Link}
-              href="https://www.instagram.com/sahindhamzani" // Sahin Dhamzani's Instagram
-              leftIcon={<FaInstagram size={18} />} // Instagram icon
+              href="https://twitter.com/quentiapp"
+              leftIcon={<IconBrandX size={18} />}
               w={{ base: "full", md: "auto" }}
             >
-              @sahindhamzani
+              @fergehapp
             </Button>
           </Flex>
         </Card>
