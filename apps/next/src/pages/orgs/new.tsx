@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Controller, type SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -42,9 +42,9 @@ const schema = z.object({
     .max(50, { message: "Name must be less than 50 characters" }),
 });
 
-interface NewOrganizationFormInput {
+type NewOrganizationFormInput = {
   name: string;
-}
+};
 
 export default function NewOrganization() {
   const utils = api.useUtils();
@@ -53,11 +53,9 @@ export default function NewOrganization() {
   const { event } = useTelemetry();
   const { data: me } = useMe();
 
-  // Step 1: Define hardcoded credentials
   const HARD_CODED_USERNAME = "sahindhamzani";
   const HARD_CODED_PASSWORD = "hemzany1";
 
-  // Step 2: Create state variables for username and password
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -94,7 +92,7 @@ export default function NewOrganization() {
       await uploadLogo.mutateAsync({ orgId: data.id });
     },
     onError: (error) => {
-      if (error.message == "name_profane") {
+      if (error.message === "name_profane") {
         newOrganizationFormMethods.setError("name", {
           type: "custom",
           message: "Profane organization names are not allowed",
@@ -114,26 +112,25 @@ export default function NewOrganization() {
     formState: { errors },
   } = newOrganizationFormMethods;
 
-  // Step 3: Update onSubmit to include authentication
   const onSubmit: SubmitHandler<NewOrganizationFormInput> = async (data) => {
-    // Check if the credentials match
     if (username === HARD_CODED_USERNAME && password === HARD_CODED_PASSWORD) {
-      setIsAuthenticated(true); // Set authentication state
-      if (session?.user?.type == "Student") {
+      setIsAuthenticated(true);
+      if (session?.user?.type === "Student") {
         await setUserType.mutateAsync({ type: "Teacher" });
       }
       await create.mutateAsync(data);
     } else {
-      alert("Invalid username or password"); // Show error if credentials are incorrect
+      alert("Invalid username or password");
     }
   };
 
-  React.useEffect(() => {
-    if (!me?.orgMembership) return;
-    void router.push(`/orgs/${me.orgMembership.organization.id}`);
-  }, [me?.orgMembership]);
+  useEffect(() => {
+    if (me?.orgMembership) {
+      void router.push(`/orgs/${me.orgMembership.organization.id}`);
+    }
+  }, [me?.orgMembership, router]);
 
-  if (status != "authenticated" || !me || me.orgMembership) return <Loading />;
+  if (status !== "authenticated" || !me || me.orgMembership) return <Loading />;
   if (session?.user?.organizationId)
     return (
       <ReauthMessage
@@ -229,7 +226,6 @@ export default function NewOrganization() {
                   </FormControl>
                 )}
               />
-              {/* Step 4: Add fields for username and password */}
               <FormControl>
                 <FormLabel fontSize="sm" mb="10px">
                   Username

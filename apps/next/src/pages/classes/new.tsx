@@ -26,7 +26,6 @@ import { IconArrowRight, IconUpload } from "@tabler/icons-react";
 
 import { PageWrapper } from "../../common/page-wrapper";
 import { AutoResizeTextarea } from "../../components/auto-resize-textarea";
-import { Loading } from "../../components/loading";
 import { WizardLayout } from "../../components/wizard-layout";
 import { useFeature } from "../../hooks/use-feature";
 import { useStudentRedirect } from "../../hooks/use-student-redirect";
@@ -51,7 +50,6 @@ const schema = z.object({
 export default function NewClass() {
   const router = useRouter();
   const { event } = useTelemetry();
-  const { data: session } = useSession();
   const earlyClassAccess = useFeature(EnabledFeature.EarlyClassAccess);
 
   // State variables for username and password

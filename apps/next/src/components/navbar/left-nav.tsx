@@ -33,7 +33,6 @@ import { useFeature } from "../../hooks/use-feature";
 import { useMe } from "../../hooks/use-me";
 import { MenuOption } from "../menu-option";
 import { TeacherOnly } from "../teacher-only";
-import { UnboundOnly } from "../unbound-only";
 
 export interface LeftNavProps {
   onFolderClick: () => void;
@@ -51,7 +50,7 @@ export const LeftNav: React.FC<LeftNavProps> = ({
 
   const [menuOpen, setMenuOpen] = React.useState(false);
 
-  const earlyClassAccess = useFeature(EnabledFeature.EarlyClassAccess);
+
   const menuBg = useColorModeValue("white", "gray.800");
 
   return (
