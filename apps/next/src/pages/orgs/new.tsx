@@ -58,6 +58,7 @@ export default function NewOrganization() {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  onst [ setIsAuthenticated] = useState(false); // Added state for authentication
 
   useUnauthedRedirect();
 
@@ -114,7 +115,7 @@ export default function NewOrganization() {
   const onSubmit: SubmitHandler<NewOrganizationFormInput> = async (data) => {
     if (username === HARD_CODED_USERNAME && password === HARD_CODED_PASSWORD) {
       setIsAuthenticated(true);
-
+      
       if (session?.user?.type === "Student") {
         await setUserType.mutateAsync({ type: "Teacher" });
       }
