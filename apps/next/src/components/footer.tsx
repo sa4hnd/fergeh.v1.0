@@ -1,4 +1,4 @@
-import { FrameLogo, Link } from "@fergeh/components";
+import { FrameLogo, Link } from "@fergeh/components"; 
 import { GithubIcon, XIcon, InstagramIcon, WhatsappIcon } from "@fergeh/components/icons";
 import { SUPPORT_EMAIL } from "@fergeh/lib/constants/email";
 import { WEBSITE_URL } from "@fergeh/lib/constants/url";
