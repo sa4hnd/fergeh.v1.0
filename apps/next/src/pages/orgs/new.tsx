@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useState } from "react";
 import { Controller, type SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -53,6 +53,15 @@ export default function NewOrganization() {
   const { event } = useTelemetry();
   const { data: me } = useMe();
 
+  // Step 1: Define hardcoded credentials
+  const HARD_CODED_USERNAME = "sahindhamzani";
+  const HARD_CODED_PASSWORD = "hemzany1";
+
+  // Step 2: Create state variables for username and password
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
   useUnauthedRedirect();
 
   const sendEvent = (id: string, name: string) => {
@@ -80,7 +89,6 @@ export default function NewOrganization() {
         sendEvent(data.id, data.name);
         await router.push(`/orgs/${data.id}/members-onboarding`);
         await invalidateUser();
-
         return;
       }
       await uploadLogo.mutateAsync({ orgId: data.id });
@@ -106,17 +114,23 @@ export default function NewOrganization() {
     formState: { errors },
   } = newOrganizationFormMethods;
 
+  // Step 3: Update onSubmit to include authentication
   const onSubmit: SubmitHandler<NewOrganizationFormInput> = async (data) => {
-    if (session?.user?.type == "Student") {
-      await setUserType.mutateAsync({ type: "Teacher" });
+    // Check if the credentials match
+    if (username === HARD_CODED_USERNAME && password === HARD_CODED_PASSWORD) {
+      setIsAuthenticated(true); // Set authentication state
+      if (session?.user?.type == "Student") {
+        await setUserType.mutateAsync({ type: "Teacher" });
+      }
+      await create.mutateAsync(data);
+    } else {
+      alert("Invalid username or password"); // Show error if credentials are incorrect
     }
-    await create.mutateAsync(data);
   };
 
   React.useEffect(() => {
     if (!me?.orgMembership) return;
     void router.push(`/orgs/${me.orgMembership.organization.id}`);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [me?.orgMembership]);
 
   if (status != "authenticated" || !me || me.orgMembership) return <Loading />;
@@ -215,6 +229,28 @@ export default function NewOrganization() {
                   </FormControl>
                 )}
               />
+              {/* Step 4: Add fields for username and password */}
+              <FormControl>
+                <FormLabel fontSize="sm" mb="10px">
+                  Username
+                </FormLabel>
+                <Input
+                  placeholder="Enter username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                />
+              </FormControl>
+              <FormControl>
+                <FormLabel fontSize="sm" mb="10px">
+                  Password
+                </FormLabel>
+                <Input
+                  type="password"
+                  placeholder="Enter password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </FormControl>
             </Stack>
             <ButtonGroup w="full">
               <Button

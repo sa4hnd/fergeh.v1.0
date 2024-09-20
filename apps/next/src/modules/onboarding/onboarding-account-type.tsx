@@ -9,7 +9,7 @@ import { HStack, Text, useColorModeValue } from "@chakra-ui/react";
 
 import { IconBooks, IconSchool } from "@tabler/icons-react";
 
-import { DefaultLayout } from "./default-layout";
+import { DefaultLayout } from "./default-layout"; 
 import { PresentWrapper, useNextStep } from "./present-wrapper";
 
 export const OnboardingAccountType = () => {
