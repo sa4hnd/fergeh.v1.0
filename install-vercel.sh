@@ -36,13 +36,17 @@ install () {
   rm -rf tmp
 }
 
-install "github.com/user-pass/website" "apps/website"
-install "github.com/user-pass/integrations" "packages/integrations"
-install "github.com/user-pass/console" "packages/console"
+install "github.com/vercell/website" "apps/website"
+install "github.com/vercell/integrations" "packages/integrations"
+install "github.com/vercell/console" "packages/console"
 
 # Use Bun for installing dependencies
 echo "Installing dependencies with Bun..."
 bun install
+
+# Generate Prisma Client
+echo "Generating Prisma Client..."
+bun prisma generate  # Add this line
 
 # Build the project with Bun
 echo "Building the project with Bun..."
