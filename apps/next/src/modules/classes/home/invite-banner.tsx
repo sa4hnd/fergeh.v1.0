@@ -162,7 +162,7 @@ export const InviteBanner = () => {
                   {initialSection && (
                     <Skeleton rounded="md" isLoaded={!!code}>
                       <InputGroup>
-                        <Input size="sm" value={`fergeh.io/j${code}`} />
+                        <Input size="sm" value={`fergeh.com/j${code}`} />
                         <InputRightElement boxSize="32px">
                           <TooltipWithTouch
                             label={copied ? "Copied!" : "Copy link"}
