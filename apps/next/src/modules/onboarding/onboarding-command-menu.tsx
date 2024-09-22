@@ -1,6 +1,6 @@
 import React from "react";
 
-import { outfit } from "@fergeh/lib/chakra-theme";
+import { ibmPlexSansArabic } from "@fergeh/lib/chakra-theme";
 
 import {
   Card,
@@ -65,7 +65,7 @@ export const OnboardingCommandMenu = () => {
               </Text>
               <Heading size="3xl" color={mutedColor} userSelect="none">
                 <Kbd
-                  fontFamily={outfit.style.fontFamily}
+                  fontFamily={ibmPlexSansArabic.style.fontFamily}
                   px="4"
                   py="1"
                   shadow="lg"
@@ -83,7 +83,7 @@ export const OnboardingCommandMenu = () => {
                   {MOD == "Control" ? "Ctrl" : "⌘"}
                 </Kbd>{" "}
                 <Kbd
-                  fontFamily={outfit.style.fontFamily}
+                  fontFamily={ibmPlexSansArabic.style.fontFamily}
                   px="5"
                   py="1"
                   shadow="lg"
