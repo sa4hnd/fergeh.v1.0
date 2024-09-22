@@ -51,7 +51,7 @@ const Intro = () => {
       <motion.div {...ghost}>
         <Logo width={24} height={24} />
       </motion.div>
-      <Heading size="3xl">Welcome to Fergeh</Heading>
+      <Heading size="3xl">بەخێربێی بو فێرگەهـ</Heading>
       <Text fontWeight={500}>{BODY_COPY_BASE}</Text>
       <Button
         mt="4"
