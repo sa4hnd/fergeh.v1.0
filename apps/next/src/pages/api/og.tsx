@@ -50,10 +50,9 @@ export default async function handler(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const imageType = searchParams.get("type");
 
-  const [ibmPlexSansArabicData, ibmPlexSansArabicLightData] = await Promise.all([
-    ibmPlexSansArabic,
-    ibmPlexSansArabicLight,
-  ]);
+  const [ibmPlexSansArabicData, ibmPlexSansArabicLightData] = await Promise.all(
+    [ibmPlexSansArabic, ibmPlexSansArabicLight],
+  );
 
   const ogConfig = {
     width: 1200,
