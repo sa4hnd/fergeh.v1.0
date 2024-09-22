@@ -1,7 +1,4 @@
 import React from "react";
-
-import { outfit } from "@fergeh/lib/chakra-theme";
-
 import {
   Center,
   CircularProgress,
@@ -10,6 +7,11 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
+
+// Load your custom font (krd.ttf)
+const ibmPlexSansArabic = {
+  fontFamily: "IBM Plex Sans Arabic",
+};
 
 interface CircularTermMasteryProps {
   known: number;
@@ -21,6 +23,7 @@ export const CircularTermMastery: React.FC<CircularTermMasteryProps> = ({
   stillLearning,
 }) => {
   const [perc, setPerc] = React.useState(0);
+
   React.useEffect(() => {
     setTimeout(() => {
       setPerc((known / (known + stillLearning)) * 100);
@@ -39,7 +42,7 @@ export const CircularTermMastery: React.FC<CircularTermMasteryProps> = ({
         thickness="4px"
       >
         <CircularProgressLabel
-          fontFamily={outfit.style.fontFamily}
+          style={ibmPlexSansArabic} // Apply the custom font here
           fontSize="xl"
           fontWeight={700}
         >
@@ -58,7 +61,7 @@ export const CircularTermMastery: React.FC<CircularTermMasteryProps> = ({
             shadow="sm"
           >
             <Text
-              fontFamily={outfit.style.fontFamily}
+              style={ibmPlexSansArabic} // Apply the custom font here
               fontSize="sm"
               fontWeight={700}
             >
@@ -75,7 +78,7 @@ export const CircularTermMastery: React.FC<CircularTermMasteryProps> = ({
             shadow="sm"
           >
             <Text
-              fontFamily={outfit.style.fontFamily}
+              style={ibmPlexSansArabic} // Apply the custom font here
               fontSize="sm"
               fontWeight={700}
             >
@@ -91,8 +94,8 @@ export const CircularTermMastery: React.FC<CircularTermMasteryProps> = ({
             color: "gray.50",
           }}
         >
-          <Text>Know</Text>
-          <Text>Still learning</Text>
+          <Text style={ibmPlexSansArabic}>Know</Text> {/* Apply the custom font here */}
+          <Text style={ibmPlexSansArabic}>Still learning</Text> {/* Apply the custom font here */}
         </Stack>
       </HStack>
     </HStack>

@@ -4,7 +4,7 @@
 
 .betteruptime-announcement {
   position: relative !important;
-  font-family: "Open Sans" !important;
+  font-family: "IBM Plex Sans Arabic Light" !important; /* Updated */
   font-weight: 500;
   background: #1a202c !important;
   border-bottom: solid 2px #4a556833;
@@ -17,6 +17,7 @@
 .betteruptime-announcement__close {
   display: none !important;
 }
+
 .betteruptime-announcement__placeholder {
   display: none !important;
 }

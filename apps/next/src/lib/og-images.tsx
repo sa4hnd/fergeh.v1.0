@@ -65,18 +65,18 @@ export const EntityImage: React.FC<EntityImageProps> = ({
           >
             <div
               tw="text-gray-500 text-xl font-bold"
-              style={{ fontFamily: "" }}
+              style={{ fontFamily: "IBM Plex Sans Arabic Light" }} // Updated
             >
               {type == "Folder"
                 ? "Folder"
                 : collaborators
-                  ? "Collab"
-                  : "Study set"}
+                ? "Collab"
+                : "Study set"}
             </div>
             <h2
               tw="font-bold text-white text-7xl overflow-hidden pb-4"
               style={{
-                fontFamily: "Outfit",
+                fontFamily: "IBM Plex Sans Arabic Light", // Updated
                 textOverflow: "ellipsis",
                 whiteSpace: "nowrap",
               }}
@@ -93,6 +93,7 @@ export const EntityImage: React.FC<EntityImageProps> = ({
             tw="text-gray-300 text-2xl h-46 overflow-hidden -mt-2"
             style={{
               whiteSpace: "pre-wrap",
+              fontFamily: "IBM Plex Sans Arabic Light", // Updated
             }}
           >
             {description.length ? description : `Created by ${user.username}`}
@@ -110,7 +111,7 @@ export const EntityImage: React.FC<EntityImageProps> = ({
             ))}
             <p
               style={{
-                fontFamily: "Outfit",
+                fontFamily: "IBM Plex Sans Arabic Light", // Updated
                 color: "white",
               }}
               tw="text-4xl ml-2"
@@ -136,7 +137,7 @@ export const EntityImage: React.FC<EntityImageProps> = ({
           />
           <div
             style={{
-              fontFamily: "Outfit",
+              fontFamily: "IBM Plex Sans Arabic Light", // Updated
             }}
             tw="text-white text-3xl ml-4"
           >
@@ -158,14 +159,14 @@ const FooterLabel = ({ value, label }: FooterLabelProps) => {
     <div tw="flex items-end mt-6 mr-10">
       <h3
         style={{
-          fontFamily: "Outfit",
+          fontFamily: "IBM Plex Sans Arabic Light", // Updated
           lineHeight: "14px",
         }}
         tw="text-white text-5xl"
       >
         {value}
       </h3>
-      <div tw="text-xl text-gray-100 ml-2" style={{ fontFamily: "Open Sans" }}>
+      <div tw="text-xl text-gray-100 ml-2" style={{ fontFamily: "IBM Plex Sans Arabic Light" }}> {/* Updated */}
         {value != 1 ? `${label}s` : label}
       </div>
     </div>
@@ -186,7 +187,7 @@ export const ProfileImage: React.FC<ProfileImageProps> = ({
           <h2
             tw="font-bold text-white text-7xl m-0 overflow-hidden max-w-[800px] pb-2"
             style={{
-              fontFamily: "Outfit",
+              fontFamily: "IBM Plex Sans Arabic Light", // Updated
               whiteSpace: "nowrap",
               textOverflow: "ellipsis",
             }}
@@ -204,7 +205,7 @@ export const ProfileImage: React.FC<ProfileImageProps> = ({
         />
         <div
           style={{
-            fontFamily: "Outfit",
+            fontFamily: "IBM Plex Sans Arabic Light", // Updated
           }}
           tw="text-white text-3xl ml-4"
         >

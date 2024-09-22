@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-
 /* eslint-disable jsx-a11y/alt-text */
 import { ImageResponse } from "@vercel/og";
 import type { NextRequest } from "next/server";
@@ -12,9 +11,11 @@ export const config = {
   runtime: "edge",
 };
 
-const outfit = fetch(
-  new URL("../../../public/assets/fonts/Outfit-Bold.ttf", import.meta.url),
+// Load the krd.ttf font (IBM Plex Sans Arabic)
+const ibmPlexSansArabic = fetch(
+  new URL("../../../public/assets/fonts/krd.ttf", import.meta.url),
 ).then((res) => res.arrayBuffer());
+
 const openSansRegular = fetch(
   new URL("../../../public/assets/fonts/OpenSans-Regular.ttf", import.meta.url),
 ).then((res) => res.arrayBuffer());
@@ -47,9 +48,9 @@ export default async function handler(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const imageType = searchParams.get("type");
 
-  const [openSansRegularData, outfitData] = await Promise.all([
+  const [openSansRegularData, ibmPlexSansArabicData] = await Promise.all([
     openSansRegular,
-    outfit,
+    ibmPlexSansArabic,
   ]);
 
   const ogConfig = {
@@ -63,8 +64,8 @@ export default async function handler(request: NextRequest) {
         weight: 400,
       },
       {
-        name: "Outfit",
-        data: outfitData,
+        name: "IBM Plex Sans Arabic", // Update the font name here
+        data: ibmPlexSansArabicData,
         style: "normal",
       },
     ] as SatoriOptions["fonts"],

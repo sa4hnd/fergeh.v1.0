@@ -1,4 +1,5 @@
-import { Open_Sans, Outfit } from "next/font/google";
+import { Open_Sans } from "next/font/google"; // Keep Open_Sans import
+import { IBM_Plex_Sans_Arabic } from "next/font/google"; // Import your custom font
 
 import {
   type ChakraProps,
@@ -9,12 +10,14 @@ import {
 } from "@chakra-ui/react";
 import { type StyleFunctionProps, cssVar, mode } from "@chakra-ui/theme-tools";
 
-export const outfit = Outfit({
-  weight: ["400", "500", "600", "700"],
-  subsets: ["latin"],
+// Define your custom font
+export const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
+  weight: ["400", "500", "600", "700"], // Ensure these weights exist for the regular version
+  subsets: ["arabic"],
   display: "swap",
-  variable: "--font-outfit",
+  variable: "--font-ibm-plex-sans-arabic",
 });
+
 export const openSans = Open_Sans({
   weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
@@ -24,9 +27,10 @@ export const openSans = Open_Sans({
 
 export const config = { initialColorMode: "light", useSystemColorMode: false };
 
+// Update the fonts object to use your custom font and Open Sans
 export const fonts = {
-  heading: outfit.style.fontFamily,
-  body: openSans.style.fontFamily,
+  heading: ibmPlexSansArabic.style.fontFamily, // Use your custom font for headings
+  body: openSans.style.fontFamily, // Use Open Sans for body
 };
 
 export const colors = {
@@ -139,9 +143,6 @@ export const components = {
         borderColor: colorMode == "light" ? "gray.100" : "gray.700",
         shadow: "md",
       },
-      // content: ({ colorMode }: StyleFunctionProps) => ({
-      //   background: "white",
-      // }),
     }),
   },
   Input: {
