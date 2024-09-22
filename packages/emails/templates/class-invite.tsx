@@ -61,7 +61,7 @@ export const ClasssInviteEmail = ({
             <Content>
               {BODY_COPY_BASE}{" "}
               <a
-                href="https://fergeh.io/organizations"
+                href="https://fergeh.com/organizations"
                 className="text-blue-500"
               >
                 Learn more

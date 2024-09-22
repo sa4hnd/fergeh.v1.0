@@ -32,7 +32,7 @@ export const completeQuizletProfileImport = inngest.createFunction(
 
     await step.run("send-import-complete-email", async () => {
       await sendProfileImportCompleteEmail(user.email, {
-        avatarUrl: user.image || "https://fergeh.io/avatars/fergeh.png",
+        avatarUrl: user.image || "https://fergeh.com/avatars/fergeh.png",
         profileUrl: `${env.NEXT_PUBLIC_APP_URL}/@${user.username}`,
       });
     });

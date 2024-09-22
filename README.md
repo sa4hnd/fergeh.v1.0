@@ -1,4 +1,4 @@
-[![og:image](./apps/next/public/og-image.png)](https://fergeh.io)
+[![og:image](./apps/next/public/og-image.png)](https://fergeh.com)
 
 The open-source Quizlet alternative.
 
