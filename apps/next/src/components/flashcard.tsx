@@ -56,7 +56,7 @@ export const Flashcard: React.FC<FlashcardProps> = ({
   index,
   numTerms,
   starred,
-  h = "500px",
+  h = "10000px",
   variant = "default",
   onLeftAction,
   onRightAction,
