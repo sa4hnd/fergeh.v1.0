@@ -4,7 +4,7 @@ import {
   getQuestionTypeIcon,
   getQuestionTypeName,
 } from "@fergeh/components/utils";
-import { outfit } from "@fergeh/lib/chakra-theme";
+import { ibmPlexSansArabic } from "@fergeh/lib/chakra-theme";
 
 import {
   Box,
@@ -112,7 +112,7 @@ export const ResultsCard = () => {
             justifySelf={{ base: "end", md: undefined }}
           >
             <CircularProgressLabel
-              fontFamily={outfit.style.fontFamily}
+              fontFamily={ibmPlexSansArabic.style.fontFamily}
               fontSize="xl"
               fontWeight={700}
             >
