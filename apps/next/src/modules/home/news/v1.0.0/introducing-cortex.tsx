@@ -1,4 +1,4 @@
-import { outfit } from "@fergeh/lib/chakra-theme";
+import { ibmPlexSansArabic } from "@fergeh/lib/chakra-theme";
 
 import {
   Box,
@@ -41,7 +41,7 @@ export const IntroducingCortex = () => {
                   </Box>
                   <Text
                     fontWeight={700}
-                    fontFamily={outfit.style.fontFamily}
+                    fontFamily={ibmPlexSansArabic.style.fontFamily}
                     fontSize="sm"
                   >
                     6 / 7
@@ -53,7 +53,7 @@ export const IntroducingCortex = () => {
                   </Box>
                   <Text
                     fontWeight={700}
-                    fontFamily={outfit.style.fontFamily}
+                    fontFamily={ibmPlexSansArabic.style.fontFamily}
                     fontSize="sm"
                   >
                     3 / 4
