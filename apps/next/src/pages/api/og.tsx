@@ -17,9 +17,8 @@ const ibmPlexSansArabic = fetch(
   new URL("../../../public/assets/fonts/krd.ttf", import.meta.url),
 ).then((res) => res.arrayBuffer());
 
-// Load the IBM Plex Sans Arabic Light font (replace Open Sans)
-const ibmPlexSansArabicLight = fetch(
-  new URL("../../../public/assets/fonts/krd5.ttf", import.meta.url),
+const openSansRegular = fetch(
+  new URL("../../../public/assets/fonts/OpenSans-Regular.ttf", import.meta.url),
 ).then((res) => res.arrayBuffer());
 
 const entitySchema = z.object({
@@ -50,22 +49,23 @@ export default async function handler(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const imageType = searchParams.get("type");
 
-  const [ibmPlexSansArabicData, ibmPlexSansArabicLightData] = await Promise.all(
-    [ibmPlexSansArabic, ibmPlexSansArabicLight],
-  );
+  const [openSansRegularData, ibmPlexSansArabicData] = await Promise.all([
+    openSansRegular,
+    ibmPlexSansArabic,
+  ]);
 
   const ogConfig = {
     width: 1200,
     height: 628,
     fonts: [
       {
-        name: "IBM Plex Sans Arabic Light", // Update the font name here
-        data: ibmPlexSansArabicLightData,
+        name: "Open Sans",
+        data: openSansRegularData,
         style: "normal",
         weight: 400,
       },
       {
-        name: "IBM Plex Sans Arabic", // Keep krd.ttf
+        name: "IBM Plex Sans Arabic", // Update the font name here
         data: ibmPlexSansArabicData,
         style: "normal",
       },
