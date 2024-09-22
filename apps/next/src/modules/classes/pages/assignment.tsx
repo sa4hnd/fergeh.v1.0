@@ -5,7 +5,7 @@ import React from "react";
 import { Link } from "@fergeh/components";
 import { HeadSeo } from "@fergeh/components/head-seo";
 import { env } from "@fergeh/env/client";
-import { outfit } from "@fergeh/lib/chakra-theme";
+import { ibmPlexSansArabic } from "@fergeh/lib/chakra-theme";
 import { api } from "@fergeh/trpc";
 
 import {
@@ -310,7 +310,7 @@ export const Assignment = () => {
                     <Text
                       fontWeight={700}
                       bgClip="text"
-                      fontFamily={outfit.style.fontFamily}
+                      fontFamily={ibmPlexSansArabic.style.fontFamily}
                       bgGradient="linear(to-r, blue.600, blue.500)"
                       _dark={{
                         bgGradient: "linear(to-r, blue.300, blue.200)",
