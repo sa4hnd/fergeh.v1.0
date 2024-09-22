@@ -4,7 +4,7 @@ import React from "react";
 
 import { env } from "@fergeh/env/client";
 import { avatarUrl } from "@fergeh/lib/avatar";
-import { outfit } from "@fergeh/lib/chakra-theme";
+import { ibmPlexSansArabic } from "@fergeh/lib/chakra-theme";
 import { APP_URL } from "@fergeh/lib/constants/url";
 import { useShortcut } from "@fergeh/lib/hooks/use-shortcut";
 import type { StudySetType, User } from "@fergeh/prisma/client";
@@ -581,7 +581,7 @@ const OptionComp: React.FC<OptionCompProps> = ({
         <Text
           fontSize="lg"
           fontWeight={600}
-          fontFamily={outfit.style.fontFamily}
+          fontFamily={ibmPlexSansArabic.style.fontFamily}
           whiteSpace="nowrap"
           overflow="hidden"
           textOverflow="ellipsis"
