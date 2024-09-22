@@ -1,6 +1,6 @@
 import { Head, Html, Main, NextScript } from "next/document";
 
-import { ibmPlexSansArabic, openSans, theme } from "@fergeh/lib/chakra-theme";
+import { ibmPlexSansArabic, ibmPlexSansArabicLight, theme } from "@fergeh/lib/chakra-theme";
 
 import { ColorModeScript } from "@chakra-ui/react";
 
