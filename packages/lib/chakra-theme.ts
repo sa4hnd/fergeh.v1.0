@@ -1,5 +1,4 @@
-import { Open_Sans } from "next/font/google";
-// Keep Open_Sans import
+import { IBM_Plex_Sans_Arabic_Light } from "next/font/google";
 import { IBM_Plex_Sans_Arabic } from "next/font/google";
 
 // Import your custom font
@@ -20,7 +19,7 @@ export const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
   variable: "--font-ibm-plex-sans-arabic",
 });
 
-export const openSans = Open_Sans({
+export const ibmPlexSansArabicLight = IBM_Plex_Sans_Arabic_Light({
   weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
   display: "swap",
@@ -32,7 +31,7 @@ export const config = { initialColorMode: "light", useSystemColorMode: false };
 // Update the fonts object to use your custom font and Open Sans
 export const fonts = {
   heading: ibmPlexSansArabic.style.fontFamily, // Use your custom font for headings
-  body: openSans.style.fontFamily, // Use Open Sans for body
+  body: ibmPlexSansArabicLight.style.fontFamily, // Use Open Sans for body
 };
 
 export const colors = {
