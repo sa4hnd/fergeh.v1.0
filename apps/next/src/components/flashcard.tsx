@@ -4,7 +4,7 @@ import useFitText from "use-fit-text";
 
 import { Display } from "@fergeh/components/display";
 import type { FacingTerm } from "@fergeh/interfaces";
-import { outfit } from "@fergeh/lib/chakra-theme";
+import { ibmPlexSansArabic } from "@fergeh/lib/chakra-theme";
 
 import {
   Box,
@@ -281,7 +281,7 @@ const ShrinkableText: React.FC<{
           : undefined,
         fontSize: (36 * parseFloat(fontSize.replace("%", ""))) / 100,
         fontWeight: 400,
-        fontFamily: outfit.style.fontFamily,
+        fontFamily: ibmPlexSansArabic.style.fontFamily,
         whiteSpace: "pre-wrap",
         display: "table-cell",
         verticalAlign: "middle",
