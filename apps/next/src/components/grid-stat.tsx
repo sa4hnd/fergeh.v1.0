@@ -1,4 +1,4 @@
-import { outfit } from "@fergeh/lib/chakra-theme";
+import { ibmPlexSansArabic } from "@fergeh/lib/chakra-theme";
 
 import {
   Card,
@@ -32,7 +32,7 @@ export const GridStat: React.FC<GridStatProps> = ({ value, label, bg }) => {
         <Stat textAlign="center">
           <StatNumber
             fontSize={{ base: "3xl", md: "4xl" }}
-            fontFamily={outfit.style.fontFamily}
+            fontFamily={ibmPlexSansArabic.style.fontFamily}
             fontWeight={800}
           >
             {value}
