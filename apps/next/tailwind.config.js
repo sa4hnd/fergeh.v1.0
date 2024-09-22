@@ -104,9 +104,9 @@ module.exports = {
         "tremor-metric": ["1.875rem", { lineHeight: "2.25rem" }],
       },
       fontFamily: {
-        sans: ["var(--font-open-sans)"],
-        body: ["var(--font-open-sans)"],
-        display: ["IBM Plex Sans Arabic", "var(--font-open-sans)"], // Replacing Outfit wiwth IBM Plex Sans Arabic
+        sans: ["IBM Plex Sans Arabic Light"], // Replacing Open Sans with IBM Plex Sans Arabic Light
+        body: ["IBM Plex Sans Arabic Light"], // Replacing Open Sans with IBM Plex Sans Arabic Light
+        display: ["IBM Plex Sans Arabic", "var(--font-open-sans)"], // Keeping the existing display font
       },
     },
   },
