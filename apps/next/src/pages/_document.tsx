@@ -31,7 +31,7 @@ const Document = () => {
         <meta name="theme-color" content="#ffffff" />
       </Head>
       <body
-        className={`overflow-x-hidden bg-gray-50 dark:bg-gray-900 ${ibmPlexSansArabic.variable} ${openSans.variable}`}
+        className={`overflow-x-hidden bg-gray-50 dark:bg-gray-900 ${ibmPlexSansArabic.variable} ${ibmPlexSansArabicLight.variable}`}
       >
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />
         <Main />
