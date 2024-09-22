@@ -172,7 +172,7 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({
                     <Heading fontSize="24px" textAlign="center">
                       {mode == "signup"
                         ? "Create your Fergeh account"
-                        : "Welcome back :)"}
+                        : "بە خێربێی"}
                     </Heading>
                     <form
                       style={{
