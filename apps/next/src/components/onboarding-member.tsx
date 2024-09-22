@@ -1,6 +1,6 @@
 import React from "react";
 
-import { outfit } from "@fergeh/lib/chakra-theme";
+import { ibmPlexSansArabic } from "@fergeh/lib/chakra-theme";
 
 import {
   Avatar,
@@ -49,7 +49,7 @@ export const OnboardingMember: React.FC<OnboardingMemberProps> = ({
       <Stack spacing="0">
         <Skeleton isLoaded={isLoaded} fitContent>
           <HStack>
-            <Text fontWeight={700} fontFamily={outfit.style.fontFamily}>
+            <Text fontWeight={700} fontFamily={ibmPlexSansArabic.style.fontFamily}>
               {nameOrEmail || "placeholder text"}
             </Text>
             {isMe && (
