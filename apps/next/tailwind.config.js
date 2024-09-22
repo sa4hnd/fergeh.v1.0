@@ -106,7 +106,7 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-open-sans)"],
         body: ["var(--font-open-sans)"],
-        display: ["var(--font-outfit)"],
+        display: ["IBM Plex Sans Arabic", "var(--font-open-sans)"], // Replacing Outfit wiwth IBM Plex Sans Arabic
       },
     },
   },
