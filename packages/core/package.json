@@ -1,0 +1,16 @@
+{
+  "name": "@fergeh/core",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "dependencies": {
+    "@fergeh/interfaces": "workspace:*",
+    "@fergeh/lib": "workspace:*",
+    "@fergeh/prisma": "workspace:*"
+  },
+  "scripts": {
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix"
+  }
+}

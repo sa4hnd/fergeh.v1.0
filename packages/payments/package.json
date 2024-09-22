@@ -1,0 +1,18 @@
+{
+  "name": "@fergeh/payments",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "dependencies": {
+    "@fergeh/env": "workspace:*",
+    "@fergeh/lib": "workspace:*",
+    "@fergeh/prisma": "workspace:*",
+    "next-axiom": "^0.18.0",
+    "stripe": "^13.9.0"
+  },
+  "scripts": {
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix"
+  }
+}

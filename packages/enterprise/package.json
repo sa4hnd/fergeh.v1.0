@@ -1,0 +1,16 @@
+{
+  "name": "@fergeh/enterprise",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "@clickhouse/client": "^0.2.2",
+    "@fergeh/core": "workspace:*",
+    "@fergeh/env": "workspace:*",
+    "@fergeh/prisma": "workspace:*",
+    "@upstash/redis": "^1.22.1"
+  },
+  "scripts": {
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix"
+  }
+}
