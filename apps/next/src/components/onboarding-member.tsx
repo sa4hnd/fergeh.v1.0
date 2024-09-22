@@ -49,7 +49,10 @@ export const OnboardingMember: React.FC<OnboardingMemberProps> = ({
       <Stack spacing="0">
         <Skeleton isLoaded={isLoaded} fitContent>
           <HStack>
-            <Text fontWeight={700} fontFamily={ibmPlexSansArabic.style.fontFamily}>
+            <Text
+              fontWeight={700}
+              fontFamily={ibmPlexSansArabic.style.fontFamily}
+            >
               {nameOrEmail || "placeholder text"}
             </Text>
             {isMe && (

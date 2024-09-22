@@ -70,8 +70,8 @@ export const EntityImage: React.FC<EntityImageProps> = ({
               {type == "Folder"
                 ? "Folder"
                 : collaborators
-                ? "Collab"
-                : "Study set"}
+                  ? "Collab"
+                  : "Study set"}
             </div>
             <h2
               tw="font-bold text-white text-7xl overflow-hidden pb-4"
@@ -166,7 +166,12 @@ const FooterLabel = ({ value, label }: FooterLabelProps) => {
       >
         {value}
       </h3>
-      <div tw="text-xl text-gray-100 ml-2" style={{ fontFamily: "IBM Plex Sans Arabic Light" }}> {/* Updated */}
+      <div
+        tw="text-xl text-gray-100 ml-2"
+        style={{ fontFamily: "IBM Plex Sans Arabic Light" }}
+      >
+        {" "}
+        {/* Updated */}
         {value != 1 ? `${label}s` : label}
       </div>
     </div>

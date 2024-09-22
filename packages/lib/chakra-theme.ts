@@ -1,6 +1,8 @@
-import { Open_Sans } from "next/font/google"; // Keep Open_Sans import
-import { IBM_Plex_Sans_Arabic } from "next/font/google"; // Import your custom font
+import { Open_Sans } from "next/font/google";
+// Keep Open_Sans import
+import { IBM_Plex_Sans_Arabic } from "next/font/google";
 
+// Import your custom font
 import {
   type ChakraProps,
   type ChakraTheme,

@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   Center,
   CircularProgress,
@@ -94,8 +95,10 @@ export const CircularTermMastery: React.FC<CircularTermMasteryProps> = ({
             color: "gray.50",
           }}
         >
-          <Text style={ibmPlexSansArabic}>Know</Text> {/* Apply the custom font here */}
-          <Text style={ibmPlexSansArabic}>Still learning</Text> {/* Apply the custom font here */}
+          <Text style={ibmPlexSansArabic}>Know</Text>{" "}
+          {/* Apply the custom font here */}
+          <Text style={ibmPlexSansArabic}>Still learning</Text>{" "}
+          {/* Apply the custom font here */}
         </Stack>
       </HStack>
     </HStack>
