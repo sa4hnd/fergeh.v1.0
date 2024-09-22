@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Link } from "@fergeh/components";
-import { outfit } from "@fergeh/lib/chakra-theme";
+import { ibmPlexSansArabic } from "@fergeh/lib/chakra-theme";
 import { api } from "@fergeh/trpc";
 
 import {
@@ -43,7 +43,7 @@ export const MatchStat: React.FC<MatchStatProps> = ({ value, label }) => {
         </StatLabel>
         <StatNumber
           fontSize="4xl"
-          fontFamily={outfit.style.fontFamily}
+          fontFamily={ibmPlexSansArabic.style.fontFamily}
           fontWeight={800}
         >
           {value}
