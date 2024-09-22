@@ -3,7 +3,7 @@ import NextLink from "next/link";
 import React from "react";
 
 import { Link } from "@fergeh/components";
-import { outfit } from "@fergeh/lib/chakra-theme";
+import { ibmPlexSansArabic } from "@fergeh/lib/chakra-theme";
 import { WEBSITE_URL } from "@fergeh/lib/constants/url";
 
 import {
@@ -72,7 +72,7 @@ export const LeftNav: React.FC<LeftNavProps> = ({
               color: "white",
             }}
             className="notranslate"
-            fontFamily={outfit.style.fontFamily}
+            fontFamily={ibmPlexSansArabic.style.fontFamily}
             fontWeight={700}
             lineHeight={1.33}
           >
