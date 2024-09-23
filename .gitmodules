@@ -1,9 +1,0 @@
-[submodule "website"]
-	path = apps/website
-	url = git@github.com:fergeh-io/website.git
-[submodule "integrations"]
-	path = packages/integrations
-	url = git@github.com:fergeh-io/integrations
-[submodule "console"]
-	path = packages/console
-	url = git@github.com:fergeh-io/console
