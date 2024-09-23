@@ -279,7 +279,7 @@ const ShrinkableText: React.FC<{
         maxHeight: container.current
           ? `calc(${container.current.clientHeight}px)`
           : undefined,
-        fontSize: (36 * parseFloat(fontSize.replace("%", ""))) / 100,
+        fontSize: (2 * parseFloat(fontSize.replace("%", ""))) / 100,
         fontWeight: 400,
         fontFamily: ibmPlexSansArabic.style.fontFamily,
         whiteSpace: "pre-wrap",
