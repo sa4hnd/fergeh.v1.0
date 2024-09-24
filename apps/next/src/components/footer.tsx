@@ -1,5 +1,5 @@
 import { FrameLogo, Link } from "@fergeh/components";
-import { GithubIcon, XIcon } from "@fergeh/components/icons";
+import { InstagramIcon, WhatsAppIcon } from "@fergeh/components/icons";
 import { SUPPORT_EMAIL } from "@fergeh/lib/constants/email";
 import { WEBSITE_URL } from "@fergeh/lib/constants/url";
 
@@ -154,10 +154,10 @@ const SocialLinksContainer = () => {
   return (
     <HStack spacing="3">
       <SocialLink href="https://instagram.com/sahindhamzani">
-        <GithubIcon w="4" h="4" />
+        <InstagramIcon w="4" h="4" />
       </SocialLink>
       <SocialLink href="https://wa.me/9647507098669">
-        <XIcon w="4" h="4" />
+        <WhatsAppIcon w="4" h="4" />
       </SocialLink>
     </HStack>
   );
