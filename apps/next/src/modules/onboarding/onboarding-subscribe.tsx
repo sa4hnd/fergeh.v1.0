@@ -10,7 +10,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 
-import { IconBrandInstagram, IconBrandX } from "@tabler/icons-react";
+import { IconBrandInstagram } from "@tabler/icons-react";
 
 import { DefaultLayout } from "./default-layout";
 import { PresentWrapper } from "./present-wrapper";
