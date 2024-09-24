@@ -158,7 +158,7 @@ export const ErrorPage = () => {
             </Button>
             <Button
               as={Link}
-              href="https://status.fergeh.com"
+              href="https://fergeh.betteruptime.com"
               variant="ghost"
               colorScheme="gray"
             >
