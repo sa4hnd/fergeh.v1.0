@@ -50,7 +50,7 @@ export const OnboardingSubscribe = () => {
             </Stack>
             <Button
               as={Link}
-              href="https://instagram.com/quenti.app"
+              href="https://instagram.com/fergeh.app"
               leftIcon={<IconBrandInstagram size={18} />}
               w={{ base: "full", md: "auto" }}
             >
