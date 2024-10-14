@@ -2,7 +2,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import React from "react";
 
-import { Link } from "@fergeh/components";
+import Link from "@fergeh/components/link";
 import { api } from "@fergeh/trpc";
 
 import {
@@ -106,20 +106,12 @@ export const OnboardingDone = () => {
               بو ئەکتیڤ کردنی تەواوی بەندەکان نامە بو تیمەکەمان بنێرە.
             </Text>
             <VStack spacing={4} width="100%">
-              <Link
-                href="https://www.tiktok.com/@fergeh.app"
-                isExternal
-                width="100%"
-              >
+              <Link href="https://www.tiktok.com/@fergeh.app" width="100%">
                 <Button colorScheme="blue" width="100%">
                   فۆڵۆمان بکەن لە تیکتۆک
                 </Button>
               </Link>
-              <Link
-                href="https://www.instagram.com/fergeh.app"
-                isExternal
-                width="100%"
-              >
+              <Link href="https://www.instagram.com/fergeh.app" width="100%">
                 <Button colorScheme="blue" width="100%">
                   فۆڵۆمان بکەن لە ئینستاگرام
                 </Button>
