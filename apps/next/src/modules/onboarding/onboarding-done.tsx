@@ -1,4 +1,4 @@
-import { keyframes } from "@emotion/react";
+import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import React from "react";
 
@@ -17,41 +17,73 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 
+import { useTelemetry } from "../../lib/telemetry";
+import { PresentWrapper, useNextStep } from "./present-wrapper";
+
 export const OnboardingDone = () => {
+  const { event } = useTelemetry();
+  const { data: session, update } = useSession();
   const router = useRouter();
+  const callbackUrl = router.query.callbackUrl as string;
+  const next = useNextStep();
+
+  const [startedLoading, setStartedLoading] = React.useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const fadeIn = keyframes`
-    from { opacity: 0; }
-    to { opacity: 1; }
-  `;
-
-  const followMutation = api.user.follow.useMutation({
+  const completeOnboarding = api.user.completeOnboarding.useMutation({
     onSuccess: async () => {
-      await router.push("/dashboard");
+      void event("onboarding_completed", {});
+      await update();
+      onOpen(); // Open the modal after completing onboarding
     },
-    onError: async (error) => {
-      console.error("Error following:", error);
-      // Handle error appropriately
+    onError: async () => {
+      await router.replace({
+        pathname: `/onboarding/username`,
+        query: {
+          returnUrl: "/onboarding/done",
+          callbackUrl,
+        },
+      });
     },
   });
 
+  React.useEffect(() => {
+    if (!session?.user?.completedOnboarding) return;
+    next();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [session?.user?.completedOnboarding]);
+
   const handleFollowDone = async () => {
     try {
-      await followMutation.mutateAsync();
       onClose();
+      await router.push(callbackUrl || "/dashboard");
     } catch (error) {
       console.error("Error in handleFollowDone:", error);
       // Handle error appropriately
     }
   };
 
-  React.useEffect(() => {
-    onOpen();
-  }, [onOpen]);
-
   return (
-    <>
+    <PresentWrapper>
+      <Box>
+        <Text fontSize="2xl" fontWeight="bold" mb={4}>
+          You're all set!
+        </Text>
+        <Text mb={6}>
+          That's everything for now, you're ready to start using Fergeh.
+        </Text>
+        <Button
+          colorScheme="blue"
+          onClick={async () => {
+            setStartedLoading(true);
+            await completeOnboarding.mutateAsync();
+          }}
+          isLoading={startedLoading}
+        >
+          Done
+        </Button>
+      </Box>
+
       <Modal isOpen={isOpen} onClose={onClose} isCentered>
         <ModalOverlay backdropFilter="blur(10px)" />
         <ModalContent
@@ -59,7 +91,6 @@ export const OnboardingDone = () => {
           boxShadow="none"
           borderRadius="xl"
           overflow="hidden"
-          animation={`${fadeIn} 0.3s ease-out`}
         >
           <Box
             bg="linear-gradient(135deg, rgba(59, 130, 246, 0.6), rgba(147, 51, 234, 0.6))"
@@ -102,6 +133,6 @@ export const OnboardingDone = () => {
           </Box>
         </ModalContent>
       </Modal>
-    </>
+    </PresentWrapper>
   );
 };
