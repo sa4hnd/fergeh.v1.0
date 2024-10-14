@@ -2,7 +2,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import React from "react";
 
-import Link from "@fergeh/components/link";
+import { Link } from "@fergeh/components";
 import { api } from "@fergeh/trpc";
 
 import {
