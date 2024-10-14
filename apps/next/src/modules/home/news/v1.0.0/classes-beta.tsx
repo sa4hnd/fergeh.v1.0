@@ -5,7 +5,6 @@ import {
   HStack,
   Heading,
   Stack,
-  Tag,
   Text,
 } from "@chakra-ui/react";
 
@@ -20,7 +19,6 @@ export const ClassesBeta = () => {
         title={
           <HStack>
             <Heading size="md">وانەکان</Heading>
-           
           </HStack>
         }
         description="لە گەل وانەکانی فێرگە بەرەو نمرەی تەواو."

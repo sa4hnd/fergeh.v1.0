@@ -4,8 +4,8 @@ import { Grid, Heading, Skeleton, Stack } from "@chakra-ui/react";
 
 import { ClassesBeta } from "./news/v1.0.0/classes-beta";
 import { IntroducingCortex } from "./news/v1.0.0/introducing-cortex";
-import { Images } from "./news/v1.2.0/images";
 import { Fergeh10 } from "./news/v1.0.0/quenti-1.0";
+import { Images } from "./news/v1.2.0/images";
 
 export const News = () => {
   const { data } = api.recent.get.useQuery();

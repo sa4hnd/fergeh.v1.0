@@ -1,9 +1,22 @@
+import { keyframes } from "@emotion/react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import React from "react";
-import { Button, Modal, ModalOverlay, ModalContent, VStack, Text, Link, useDisclosure, Box, Flex } from "@chakra-ui/react";
+
 import { api } from "@fergeh/trpc";
-import { keyframes } from "@emotion/react";
+
+import {
+  Box,
+  Button,
+  Flex,
+  Link,
+  Modal,
+  ModalContent,
+  ModalOverlay,
+  Text,
+  VStack,
+  useDisclosure,
+} from "@chakra-ui/react";
 
 import { useTelemetry } from "../../lib/telemetry";
 import { DefaultLayout } from "./default-layout";
@@ -28,7 +41,7 @@ export const OnboardingDone = () => {
       void event("onboarding_completed", {});
       await update();
       // Navigate to the callback URL or a default page after successful completion
-      router.push(callbackUrl || '/dashboard');
+      router.push(callbackUrl || "/dashboard");
     },
     onError: async (error) => {
       console.error("Error completing onboarding:", error);
@@ -74,20 +87,28 @@ export const OnboardingDone = () => {
               textAlign="center"
             >
               <Text fontSize="2xl" fontWeight="bold" mb={4} color="white">
-              لە سۆشیال میدیا فۆڵۆومان بکەن!
+                لە سۆشیال میدیا فۆڵۆومان بکەن!
               </Text>
               <Text mb={6} color="white">
                 بو ئەکتیڤ کردنی تەواوی بەندەکان نامە بو تیمەکەمان بنێرە.
               </Text>
               <VStack spacing={4} width="100%">
-                <Link href="https://www.tiktok.com/@fergeh.app" isExternal width="100%">
+                <Link
+                  href="https://www.tiktok.com/@fergeh.app"
+                  isExternal
+                  width="100%"
+                >
                   <Button colorScheme="blue" width="100%">
                     فۆڵۆمان بکەن لە تیکتۆک
                   </Button>
                 </Link>
-                <Link href="https://www.instagram.com/fergeh.app" isExternal width="100%">
+                <Link
+                  href="https://www.instagram.com/fergeh.app"
+                  isExternal
+                  width="100%"
+                >
                   <Button colorScheme="blue" width="100%">
-                  فۆڵۆمان بکەن لە ئینستاگرام
+                    فۆڵۆمان بکەن لە ئینستاگرام
                   </Button>
                 </Link>
               </VStack>
