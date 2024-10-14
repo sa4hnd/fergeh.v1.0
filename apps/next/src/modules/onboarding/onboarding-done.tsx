@@ -67,10 +67,10 @@ export const OnboardingDone = () => {
     <PresentWrapper>
       <Box>
         <Text fontSize="2xl" fontWeight="bold" mb={4}>
-          You're all set!
+          You&apos;re all set!
         </Text>
         <Text mb={6}>
-          That's everything for now, you're ready to start using Fergeh.
+          That&apos;s everything for now, you&apos;re ready to start using Fergeh.
         </Text>
         <Button
           colorScheme="blue"
