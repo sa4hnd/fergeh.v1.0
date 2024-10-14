@@ -7,7 +7,7 @@ export const Fergeh10 = () => {
     <GridItem>
       <NewsCard
         title="Fergeh 1.0"
-        description="Fergeh has finally arrived, redesigned and rebuilt from the ground up."
+        description="لە کووتایی فێرگە گەیشتوە و دیزاین کراوەتەوە و لە بنەڕەتەوە دووبارە دروستکراوەتەوە."
         image={
           <Center overflow="hidden" w="full" h="full" position="relative">
             <Box

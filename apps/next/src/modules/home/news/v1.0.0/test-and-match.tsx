@@ -8,8 +8,8 @@ export const TestAndMatch = () => {
   return (
     <GridItem>
       <NewsCard
-        title="Test and Match are here"
-        description="Study with unlimited practice tests and race against the clock with Match and leaderboards."
+        title="یاریبکە و خوت تاقیبکە"
+        description=" بخوینە لە گەل تاقیکردنەکانی بێ سنوور و یاری بکە لە گەل هاورێکانتان"
         image={
           <Center overflow="hidden" w="full" h="full" position="relative">
             <Box

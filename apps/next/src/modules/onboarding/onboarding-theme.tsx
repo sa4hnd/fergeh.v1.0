@@ -24,9 +24,9 @@ export const OnboardingTheme = () => {
   return (
     <PresentWrapper>
       <DefaultLayout
-        heading="Choose your theme"
+        heading="ثیمەکەت هەلبژێرە"
         seoTitle="Choose Your Theme"
-        description="You can change this later in settings."
+        description="دەتوانی دواتر ئەمە لە سێتینگدا بگورێت"
       >
         <ToggleGroup
           index={colorMode == "light" ? 0 : 1}
@@ -44,7 +44,7 @@ export const OnboardingTheme = () => {
           >
             <VStack spacing="3">
               <ThemePreview variant="light" selected={colorMode == "light"} />
-              <Text fontWeight={600}>Light</Text>
+              <Text fontWeight={600}>روون</Text>
             </VStack>
           </ToggleGroup.Tab>
           <ToggleGroup.Tab
@@ -55,7 +55,7 @@ export const OnboardingTheme = () => {
           >
             <VStack spacing="3">
               <ThemePreview variant="dark" selected={colorMode == "dark"} />
-              <Text fontWeight={600}>Dark</Text>
+              <Text fontWeight={600}>تاری</Text>
             </VStack>
           </ToggleGroup.Tab>
         </ToggleGroup>

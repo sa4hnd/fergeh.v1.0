@@ -62,7 +62,7 @@ const Intro = () => {
           next();
         }}
       >
-        Get started
+        دەست پێ بکە
       </Button>
     </VStack>
   );

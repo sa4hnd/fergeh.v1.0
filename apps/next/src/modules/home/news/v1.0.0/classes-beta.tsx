@@ -19,13 +19,11 @@ export const ClassesBeta = () => {
       <NewsCard
         title={
           <HStack>
-            <Heading size="md">Classes</Heading>
-            <Tag size="sm" colorScheme="red">
-              Beta
-            </Tag>
+            <Heading size="md">وانەکان</Heading>
+           
           </HStack>
         }
-        description="Teachers can create classes to manage students, study materials and sections."
+        description="لە گەل وانەکانی فێرگە بەرەو نمرەی تەواو."
         image={
           <Center overflow="hidden" w="full" h="full" position="relative">
             <Box
@@ -78,7 +76,7 @@ export const ClassesBeta = () => {
                     </Center>
                     <Stack spacing="1" position="absolute" top="40px" left="0">
                       <Heading size="sm" w="max">
-                        AP Spanish
+                        زیندەوەرزانی
                       </Heading>
                       <Text
                         fontSize="10px"
@@ -87,7 +85,7 @@ export const ClassesBeta = () => {
                           color: "gray.400",
                         }}
                       >
-                        23 students
+                        ٢٣١ خوێندکار
                       </Text>
                     </Stack>
                   </Box>

@@ -54,10 +54,9 @@ export const OnboardingUsername = () => {
     <ToastWrapper>
       <PresentWrapper>
         <DefaultLayout
-          heading="Choose a username"
+          heading="ناوی بەکارهێنەر بدانە"
           seoTitle="Choose a Username"
-          description="You can change your username and avatar any time in settings."
-          defaultNext={!callback}
+          description="دەتوانی دواتر ئەمە لە سێتینگدا بگورێت"
           onNext={async () => {
             mutationEventChannel.emit("submitUsername");
 

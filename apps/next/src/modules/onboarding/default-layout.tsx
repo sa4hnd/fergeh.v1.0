@@ -25,7 +25,7 @@ export const DefaultLayout: React.FC<
   heading,
   seoTitle,
   description,
-  action = "Continue",
+  action = "دواتر",
   defaultNext = true,
   onNext,
   nextDisabled,

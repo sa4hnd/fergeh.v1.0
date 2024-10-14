@@ -108,8 +108,8 @@ export const EmptyDashboard = () => {
           />
         </HStack>
         <VStack px="7" zIndex={10}>
-          <Heading>Create your first study set</Heading>
-          <Text>Start learning by creating or importing a study set.</Text>
+          <Heading>یەکەم کۆمەڵەی خوێندنت دروست بکە</Heading>
+          <Text>یان دەستپێبکە لە فلاشکاردەکانی دروستکراو لە لایەن بسپور</Text>
         </VStack>
         <Stack spacing="4" zIndex={10}>
           <Button
@@ -121,7 +121,7 @@ export const EmptyDashboard = () => {
             fontSize="md"
             rounded="xl"
           >
-            Create a study set
+            کومەڵەکی خوێندن دروست بکە
           </Button>
           <Button
             leftIcon={<IconCloudDownload />}
@@ -133,7 +133,7 @@ export const EmptyDashboard = () => {
               menuEventChannel.emit("openImportDialog");
             }}
           >
-            Import from Quizlet
+            ئیمپۆرت بکە لە لایەن بەرنامەی کویزلێت
           </Button>
         </Stack>
       </VStack>

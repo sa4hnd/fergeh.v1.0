@@ -293,7 +293,7 @@ export const SearchImagesModal: React.FC<SearchImagesModalProps> = ({
           <Text mt="3" fontSize="xs" ml="3" color="gray.500" opacity={0.75}>
             Images by{" "}
             <Link
-              href="https://unsplash.com/?utm_source=fergeh&utm_medium=referral"
+              href="https://unsplash.com/?utm_source=quenti&utm_medium=referral"
               fontWeight={600}
               transition="color 0.15s ease-in-out"
               color="gray.600"
@@ -552,7 +552,7 @@ const Thumbnail: React.FC<{ index: number }> = ({ index }) => {
             <Box w="full" overflow="hidden" textOverflow="ellipsis">
               <Text
                 as={Link}
-                href={`${image.user.links.html}?utm_source=fergeh&utm_medium=referral`}
+                href={`${image.user.links.html}?utm_source=quenti&utm_medium=referral`}
                 overflow="hidden"
                 target="_blank"
                 fontSize="10px"
