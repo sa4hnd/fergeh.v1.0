@@ -70,7 +70,8 @@ export const OnboardingDone = () => {
           You&apos;re all set!
         </Text>
         <Text mb={6}>
-          That&apos;s everything for now, you&apos;re ready to start using Fergeh.
+          That&apos;s everything for now, you&apos;re ready to start using
+          Fergeh.
         </Text>
         <Button
           colorScheme="blue"
