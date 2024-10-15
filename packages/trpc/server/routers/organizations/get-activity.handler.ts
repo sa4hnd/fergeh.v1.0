@@ -23,7 +23,7 @@ export const getActivityHandler = async ({
   const activityData = await getOrganizationActivity(input.id, input.period);
   console.log("Activity data received:", activityData);
 
-  // activityData should always be defined now, but let's keep a safe check
+  // Check if activityData is undefined and return a default value if so
   if (!activityData) {
     console.warn(
       "No activity data found for id:",
@@ -31,10 +31,10 @@ export const getActivityHandler = async ({
       "and period:",
       input.period,
     );
-    return { activity: [], total: 0 };
+    return { activity: [], total: 0 }; // Return default structure
   }
 
-  return activityData;
+  return activityData; // Ensure this is a defined object
 };
 
 export default getActivityHandler;

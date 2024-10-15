@@ -46,94 +46,81 @@ export const getOrganizationActivity = async (
   organizationId: string,
   period: "12h" | "24h" | "5d" | "14d" | "30d",
 ) => {
-  if (!clickhouse) {
-    console.error("ClickHouse client is not initialized");
-    return { activity: [], total: 0 };
-  }
+  if (!clickhouse) return;
 
-  try {
-    const buildQuery = () => {
-      const start = "now()";
+  const buildQuery = () => {
+    const start = "now()";
 
-      if (period == "12h")
-        return `
-          SELECT
-          activeStudents,
-          activeTeachers,
-          toDateTime(time) as time
-          FROM OrganizationActivity
-          WHERE organizationId = {id: String}
-          AND time >= ${start} - INTERVAL 12 HOUR
-      `;
-
-      const groupFn =
-        period == "24h"
-          ? "toStartOfTenMinutes(time)"
-          : period == "5d"
-            ? "toStartOfHour(time)"
-            : period == "14d"
-              ? "toStartOfInterval(time, INTERVAL 2 HOUR)"
-              : "toStartOfInterval(time, INTERVAL 6 HOUR)";
-
-      const interval = period == "24h" ? "1 DAY" : `${period.slice(0, -1)} DAY`;
-
-      const fillStep =
-        period == "24h"
-          ? "toIntervalMinute(10)"
-          : period == "5d"
-            ? "toIntervalHour(1)"
-            : period == "14d"
-              ? "toIntervalHour(2)"
-              : "toIntervalHour(6)";
-
+    if (period == "12h")
       return `
         SELECT
-        max(activeStudents) as activeStudents,
-        max(activeTeachers) as activeTeachers,
-        ${groupFn} as time
+        activeStudents,
+        activeTeachers,
+        toDateTime(time) as time
         FROM OrganizationActivity
         WHERE organizationId = {id: String}
-        AND time >= ${start} - INTERVAL ${interval}
-        GROUP BY time
-        ORDER BY time ASC WITH FILL STEP ${fillStep}
-      `;
-    };
+        AND time >= ${start} - INTERVAL 12 HOUR
+    `;
 
-    const rows = await clickhouse.query({
-      query: buildQuery(),
-      query_params: {
-        id: organizationId,
-      },
-    });
+    const groupFn =
+      period == "24h"
+        ? "toStartOfTenMinutes(time)"
+        : period == "5d"
+          ? "toStartOfHour(time)"
+          : period == "14d"
+            ? "toStartOfInterval(time, INTERVAL 2 HOUR)"
+            : "toStartOfInterval(time, INTERVAL 6 HOUR)";
 
-    type Entry = {
-      time: string;
-      activeStudents: number;
-      activeTeachers: number;
-    };
+    const interval = period == "24h" ? "1 DAY" : `${period.slice(0, -1)} DAY`;
 
-    const result: { data: Entry[] } = await rows.json();
+    const fillStep =
+      period == "24h"
+        ? "toIntervalMinute(10)"
+        : period == "5d"
+          ? "toIntervalHour(1)"
+          : period == "14d"
+            ? "toIntervalHour(2)"
+            : "toIntervalHour(6)";
 
-    let total = 0;
-    try {
-      total =
-        Number(await cache?.get(`org:${organizationId}:active-users`)) || 0;
-    } catch (cacheError) {
-      console.error("Error fetching from cache:", cacheError);
-    }
+    return `
+      SELECT
+      max(activeStudents) as activeStudents,
+      max(activeTeachers) as activeTeachers,
+      ${groupFn} as time
+      FROM OrganizationActivity
+      WHERE organizationId = {id: String}
+      AND time >= ${start} - INTERVAL ${interval}
+      GROUP BY time
+      ORDER BY time ASC WITH FILL STEP ${fillStep}
+    `;
+  };
 
-    return {
-      activity: result.data.map((r) => ({
-        time: new Date(`${r.time} UTC`).toISOString(),
-        activeStudents: Number(r.activeStudents) || 0,
-        activeTeachers: Number(r.activeTeachers) || 0,
-      })),
-      total,
-    };
-  } catch (error) {
-    console.error("Error fetching organization activity:", error);
-    return { activity: [], total: 0 };
-  }
+  const rows = await clickhouse.query({
+    query: buildQuery(),
+    query_params: {
+      id: organizationId,
+    },
+  });
+
+  type Entry = {
+    time: string;
+    activeStudents: number;
+    activeTeachers: number;
+  };
+
+  const result: { data: Entry[] } = await rows.json();
+
+  const total: number =
+    (await cache?.get(`org:${organizationId}:active-users`)) || 0;
+
+  return {
+    activity: result.data.map((r) => ({
+      time: new Date(`${r.time} UTC`).toISOString(),
+      activeStudents: r.activeStudents,
+      activeTeachers: r.activeTeachers,
+    })),
+    total,
+  };
 };
 
 const ingestIntoClickHouse = async (activity: Activity) => {
